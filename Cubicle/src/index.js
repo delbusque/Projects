@@ -9,9 +9,9 @@ const port = 5000;
 // initHandlebars(app);
 require('./config/handlebars.js')(app);
 
-
 app.use(express.static(path.resolve(__dirname, './public')))
 
+app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 app.listen(port, console.log.bind(console, `App is running on http://localhost:${port}`))
