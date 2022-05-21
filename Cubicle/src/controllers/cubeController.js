@@ -9,7 +9,6 @@ router.get('/create', (req, res) => {
 
 router.get('/:id', (req, res) => {
     let cube = cubeService.getOne(req.params.id);
-    console.log(cube);
     res.render('details', { ...cube })
 })
 
