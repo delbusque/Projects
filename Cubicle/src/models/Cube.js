@@ -1,45 +1,38 @@
-const uniqid = require('uniqid')
+const mongoose = require('mongoose');
 
-class Cube {
-    static #cubes = [
-        {
-            id: '28ut6swl37651ej',
-            name: 'Ice Cube',
-            description: 'Very old and nice old schooly ...',
-            imageUrl: 'https://cdn.mrgoodlife.net/wp-content/uploads/2019/05/ice-cube-960x540.jpg',
-            difficulty: '1'
-        },
-        {
-            name: 'Cube Twist',
-            description: 'CubeTwist Strange Shape Cube Black White Square II SQ2 3x3x3 Speed Cube Sector Magic Cube Puzzle Toy',
-            imageUrl: 'https://ae01.alicdn.com/kf/HTB1bgzladzvK1RkSnfoq6zMwVXa3/CubeTwist-Strange-Shape-Cube-Black-White-Square-II-SQ2-3x3x3-Speed-Cube-Sector-Magic-Cube-Puzzle.jpg',
-            difficulty: '6',
-            id: '28ut8wsl3eh5w7l'
-        },
-        {
-            name: 'Jewellery Rubik Cube',
-            description: ' Pinterest Fashion Modern',
-            imageUrl: 'https://i.pinimg.com/originals/89/e6/d9/89e6d9eed1ae375e6f0658cd7b75c28d.jpg',
-            difficulty: '3',
-            id: '28ut3vsl3fqkyp8'
-        }
-    ];
-
-    constructor(name, description, imageUrl, difficulty) {
-        this.name = name;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.difficulty = difficulty;
-        this.id = uniqid();
+const cubeSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true,
+        maxlength: 500
+    },
+    imageUrl: {
+        type: String,
+        required: true,
+        validate: [/^https?:\/\//i, 'Image Url is invalid !']
+        //validate: {
+        //    validator: function (value) {
+        //        return /^https?:\/\//i.test(value);
+        //    },
+        //    message: (props) => `Image Url ${props.value} is not valid !`;
+        //}
+    },
+    difficulty: {
+        type: Number,
+        required: true,
+        min: 1,
+        max: 6
     }
+})
 
-    static get cubes() {
-        return Cube.#cubes.slice();
-    }
+cubeSchema.path('name').validate(function (value) {
+    return value.length > 1;
+}, 'Name must be more than 1 character')
 
-    static addCube(cube) {
-        return Cube.#cubes.push(cube);
-    }
-}
+const Cube = mongoose.model('Cube', cubeSchema);
 
 module.exports = Cube;

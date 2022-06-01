@@ -1,17 +1,18 @@
-const Cube = require('../models/Cube.js');
+const Cube = require('../models/Cube');
 
-const create = (name, decription, imageUrl, difficulty) => {
-    let cube = new Cube(name, decription, imageUrl, difficulty);
-    Cube.addCube(cube);
+const create = (name, description, imageUrl, difficulty) => {
+    let cube = new Cube({
+        name,
+        description,
+        imageUrl,
+        difficulty
+    });
+    return cube.save();
 }
 
-const getAll = () => {
-    return Cube.cubes;
-}
+const getAll = () => Cube.find({}).lean();
 
-const getOne = (id) => {
-    return Cube.cubes.find(x => x.id == id);
-}
+const getOne = (id) => Cube.findById(id);
 
 const search = (text, from, to) => {
     let result = Cube.cubes;
