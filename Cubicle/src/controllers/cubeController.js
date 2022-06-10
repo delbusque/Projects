@@ -22,7 +22,7 @@ const createCube = async (req, res) => {
 }
 
 router.get('/create', (req, res) => {
-    res.render('create')
+    res.render('cube/create')
 })
 
 router.post('/create', createCube);
