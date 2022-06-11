@@ -5,12 +5,19 @@ async function create(name, description, imageUrl) {
 }
 
 async function getAll() {
+
     return Accessory.find({}).lean();
+}
+
+async function getAllWithout(accessoriesIds) {
+
+    return Accessory.find().where('_id').nin(accessoriesIds).lean();
 }
 
 const accessoryService = {
     create,
-    getAll
+    getAll,
+    getAllWithout
 }
 
 //exports.create = create;

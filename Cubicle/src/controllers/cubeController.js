@@ -1,6 +1,8 @@
 const express = require('express');
 const cubeService = require('../services/cubeService');
 const cubeAccessoryController = require('../controllers/cubeAccessoryController');
+const accessoryService = require('../services/accessoryService');
+
 
 const router = express.Router();
 
@@ -11,6 +13,7 @@ const cubeDetails = async (req, res) => {
 
 const createCube = async (req, res) => {
     let { name, description, imageUrl, difficulty } = req.body;
+
     try {
         await cubeService.create(name, description, imageUrl, difficulty);
         res.redirect('/');

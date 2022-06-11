@@ -13,7 +13,7 @@ const create = (name, description, imageUrl, difficulty) => {
 
 const getAll = () => Cube.find({}).lean();
 
-const getOne = (id) => Cube.findById(id).lean();
+const getOne = (id) => Cube.findById(id).populate('accessories').lean();
 
 const search = (text, from, to) => {
     let result = Cube.cubes;
@@ -33,7 +33,8 @@ const search = (text, from, to) => {
 
 const attachAccessory = async (cubeId, accessoryId) => {
 
-    let cube = await Cube.findById(cubeId);
+    let cube = await Cube.findById(cubeId).populate('accessories');
+
     let accessory = await Accessory.findById(accessoryId);
 
     cube.accessories.push(accessory);
