@@ -15,8 +15,8 @@ const getAll = () => Cube.find({}).lean();
 
 const getOne = (id) => Cube.findById(id).populate('accessories').lean();
 
-const search = (text, from, to) => {
-    let result = Cube.cubes;
+const search = async (text, from, to) => {
+    let result = await Cube.find({}).lean();
 
     if (text) {
         result = result.filter(x => x.name.toLowerCase().includes(text.toLowerCase()));
