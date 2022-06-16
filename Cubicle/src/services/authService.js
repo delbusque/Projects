@@ -13,29 +13,30 @@ exports.register = async function ({ username, password, repeatPassword }) {
 
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    return User.create({ username, password: hashedPassword });
+    return await User.create({ username, password: hashedPassword });
 
 }
 
 exports.login = async function ({ username, password }) {
     //check if such user
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ username }).lean();
 
     if (!user) {
-        return user;
+        return;
     }
 
     const isValid = await bcrypt.compare(password, user.password);
+    console.log(isValid);
 
     if (!isValid) {
-        return user;
+        return false;
     }
 
     // return token 
     const jwtSignPromise = new Promise((resolve, reject) => {
-        jwt.sign({ username: username.user, _id: user._id }, secret, { expiresIn: '2d' }, (err, token) => {
+        jwt.sign({ username: 123, _id: 456 }, secret, { expiresIn: '2d' }, (err, token) => {
             if (err) {
-                reject(err);
+                return reject(err);
             }
 
             resolve(token);

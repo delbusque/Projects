@@ -4,6 +4,7 @@ const routes = require('./routes');
 const config = require('./config/config.json')[process.env.NODE_ENV];
 const initDatabase = require('./config/database');
 const cookieParser = require('cookie-parser');
+const { auth } = require('./middlewares/authMiddleware.js');
 
 const app = express();
 
@@ -14,6 +15,7 @@ require('./config/handlebars.js')(app);
 app.use(express.static(path.resolve(__dirname, './public')));
 app.use(cookieParser());
 
+//app.use(auth);
 app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 

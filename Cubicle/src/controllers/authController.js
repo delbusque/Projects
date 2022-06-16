@@ -10,7 +10,7 @@ router.get('/register', (req, res) => {
 
 router.post('/register', async (req, res) => {
 
-    let user = await authService.register(req.body);
+    let user = authService.register(req.body);
 
     if (!user) {
         res.send('Passwords must be equal')
@@ -25,12 +25,12 @@ router.get('/login', (req, res) => {
 
 router.post('/login', async (req, res) => {
 
-    const token = await authService.login(req.body);
+    let token = await authService.login(req.body);
 
     if (!token) {
         res.status(400).send('Username or password do not match !!!')
     } else {
-        res.cookie(userSession, token);
+        res.cookie(userSession, token, { httpOnly: true });
         res.redirect('/');
     }
 
