@@ -42,10 +42,17 @@ const attachAccessory = async (cubeId, accessoryId) => {
     return cube.save();
 }
 
+const edit = async (cubeId, newData) => {
+
+    let cube = await Cube.findByIdAndUpdate(cubeId, newData);
+    return cube;
+}
+
 module.exports = {
     create,
     getAll,
     getOne,
     search,
-    attachAccessory
+    attachAccessory,
+    edit
 }

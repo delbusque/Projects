@@ -24,12 +24,30 @@ const createCube = async (req, res) => {
 
 }
 
+const editCube = async (req, res) => {
+
+    let cube = await cubeService.edit(req.params.cubeId, req.body);
+
+    if (!cube) {
+        return res.redirect(`/404`);
+    }
+
+    res.redirect(`/cube/${req.params.cubeId}`)
+}
+
 router.get('/create', (req, res) => {
-    res.render('cube/create')
+    res.render('cube/create');
+});
+
+router.get('/:cubeId/edit', async (req, res) => {
+
+    let cube = await cubeService.getOne(req.params.cubeId);
+    res.render('cube/edit', { cube });
 })
 
 router.post('/create', createCube);
 router.get('/:cubeId', cubeDetails);
+router.post('/:cubeId/edit', editCube);
 router.use('/:cubeId/accessory/', cubeAccessoryController);
 
 module.exports = router;
