@@ -46,8 +46,12 @@ const attachAccessory = async (cubeId, accessoryId) => {
 
 const edit = async (cubeId, newData) => {
 
-    let cube = await Cube.findByIdAndUpdate(cubeId, newData);
+    let cube = await Cube.findByIdAndUpdate(cubeId, newData, { runValidators: true });
     return cube;
+}
+
+const del = async (cubeId) => {
+    return Cube.findByIdAndDelete(cubeId);
 }
 
 module.exports = {
@@ -56,5 +60,6 @@ module.exports = {
     getOne,
     search,
     attachAccessory,
-    edit
+    edit,
+    del
 }

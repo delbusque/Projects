@@ -8,7 +8,8 @@ const router = express.Router();
 
 const cubeDetails = async (req, res) => {
     let cube = await cubeService.getOne(req.params.cubeId);
-    res.render('cube/details', { ...cube })
+    let isOwner = cube.owner == req.user?._id
+    res.render('cube/details', { ...cube, isOwner })
 }
 
 const createCube = async (req, res) => {
@@ -49,7 +50,17 @@ router.get('/:cubeId/edit', async (req, res) => {
 
     }
     res.render('cube/edit', { cube });
-})
+});
+
+router.get('/:cubeId/delete', async (req, res) => {
+    let cube = await cubeService.getOne(req.params.cubeId);
+    res.render('cube/delete', { ...cube });
+});
+
+router.post('/:cubeId/delete', async (req, res) => {
+    await cubeService.del(req.params.cubeId);
+    res.redirect('/');
+});
 
 router.post('/create', createCube);
 router.get('/:cubeId', cubeDetails);
