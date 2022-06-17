@@ -10,7 +10,7 @@ router.get('/register', (req, res) => {
 
 router.post('/register', async (req, res) => {
 
-    let user = authService.register(req.body);
+    let user = await authService.register(req.body);
 
     if (!user) {
         res.send('Passwords must be equal')

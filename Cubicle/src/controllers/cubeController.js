@@ -2,7 +2,7 @@ const express = require('express');
 const cubeService = require('../services/cubeService');
 const cubeAccessoryController = require('../controllers/cubeAccessoryController');
 const accessoryService = require('../services/accessoryService');
-
+const { isAuth } = require('../middlewares/authMiddleware');
 
 const router = express.Router();
 
@@ -13,9 +13,10 @@ const cubeDetails = async (req, res) => {
 
 const createCube = async (req, res) => {
     let { name, description, imageUrl, difficulty } = req.body;
+    let userId = req.user._id;
 
     try {
-        await cubeService.create(name, description, imageUrl, difficulty);
+        await cubeService.create(name, description, imageUrl, difficulty, userId);
         res.redirect('/');
 
     } catch (error) {
@@ -35,13 +36,18 @@ const editCube = async (req, res) => {
     res.redirect(`/cube/${req.params.cubeId}`)
 }
 
-router.get('/create', (req, res) => {
+router.get('/create', isAuth, (req, res) => {
     res.render('cube/create');
 });
 
 router.get('/:cubeId/edit', async (req, res) => {
 
     let cube = await cubeService.getOne(req.params.cubeId);
+
+    if (cube.owner != req.user._id) {
+        return res.redirect('/');
+
+    }
     res.render('cube/edit', { cube });
 })
 
