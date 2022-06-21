@@ -5,6 +5,7 @@ const config = require('./config/config.json')[process.env.NODE_ENV];
 const initDatabase = require('./config/database');
 const cookieParser = require('cookie-parser');
 const { auth } = require('./middlewares/authMiddleware.js');
+const { errorHandler } = require('./middlewares/errorHandlerMiddleware.js');
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(cookieParser());
 app.use(auth);
 app.use(express.urlencoded({ extended: true }));
 app.use(routes);
+app.use(errorHandler);
 
 initDatabase(config.DB_CONNECTION_STRING)
     .then(() => {

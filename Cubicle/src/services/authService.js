@@ -6,7 +6,7 @@ const { secret } = require('../../constants.js');
 exports.register = async function ({ username, password, repeatPassword }) {
 
     if (password !== repeatPassword) {
-        return undefined;
+        throw { message: 'Passwords do not match' };
     }
 
     const salt = 10;
@@ -22,13 +22,17 @@ exports.login = async function ({ username, password }) {
     const user = await User.findOne({ username }).lean();
 
     if (!user) {
-        return;
+        throw {
+            message: 'Invalid username or password!',
+        };
     }
 
     const isValid = await bcrypt.compare(password, user.password);
 
     if (!isValid) {
-        return false;
+        throw {
+            message: 'Invalid username or password',
+        };
     }
 
     // return token 
