@@ -1,14 +1,12 @@
 import LatestGame from "./latestGame/LatestGame";
-import * as gameservice from '../../services/gamesService';
+import * as gamesService from '../../services/gamesService';
 import { useEffect, useState } from "react";
 
 const Home = () => {
     const [games, setGames] = useState([]);
 
     useEffect(() => {
-        gameservice.getAll().then(data => {
-            setGames(data);
-        })
+        gamesService.getAll().then(data => setGames(data));
     }, [])
 
     return (
@@ -22,8 +20,6 @@ const Home = () => {
             <div id="home-page">
                 <h1>Latest Games</h1>
 
-                {/* Display div: with information about every game (if any) */}
-                {console.log(games)};
                 {games.length !== 0
                     ? games.map(g => <LatestGame key={g._id} game={g} />)
                     : <p className="no-articles">No games yet</p>}
