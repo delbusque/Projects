@@ -2,7 +2,8 @@ import Game from "./Game";
 
 const Catalog = ({ games }) => {
 
-    return (
+    return (<>
+
         <section id="catalog-page">
             <h1>All Games</h1>
             {/* Display div: with information about every game (if any) */}
@@ -12,6 +13,7 @@ const Catalog = ({ games }) => {
                 : <h3 className="no-articles">No articles yet</h3>}
 
         </section>
+    </>
     )
 }
 
