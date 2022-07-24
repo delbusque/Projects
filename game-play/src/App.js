@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
+import uniqid from 'uniqid';
 
 import './App.css';
 
@@ -21,6 +22,18 @@ function App() {
     useEffect(() => {
         gamesService.getAll().then(data => setGames(data));
     }, []);
+
+    const createGameHandler = (gameData) => {
+
+        setGames(state => [
+            ...state,
+            {
+                ...gameData,
+                _id: uniqid()
+            }
+        ])
+
+    }
 
     const addComment = (gameId, comment) => {
         setGames(state => {
@@ -46,7 +59,7 @@ function App() {
                     <Route path='/' element={<Home games={games} />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/register' element={<Register />} />
-                    <Route path='/create' element={<CreateGame />} />
+                    <Route path='/create' element={<CreateGame createGameHandler={createGameHandler} />} />
                     <Route path='/catalog' element={<Catalog games={games} />} />
                     <Route path='/catalog/:gameId' element={<GameDetails games={games} addComment={addComment} />} />
                 </Routes>

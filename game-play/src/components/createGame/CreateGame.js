@@ -1,8 +1,19 @@
-const CreateGame = () => {
-    return (
+import { useNavigate } from "react-router-dom";
 
+const CreateGame = ({ createGameHandler }) => {
+    const navigate = useNavigate()
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const gameData = Object.fromEntries(new FormData(e.target));
+
+        createGameHandler(gameData);
+        navigate('/catalog');
+    }
+
+    return (
         <section id="create-page" className="auth">
-            <form id="create">
+            <form id="create" onSubmit={onSubmit}>
                 <div className="container">
                     <h1>Create Game</h1>
                     <label htmlFor="leg-title">Legendary title:</label>
@@ -15,7 +26,7 @@ const CreateGame = () => {
                     <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
                     <label htmlFor="summary">Summary:</label>
                     <textarea name="summary" id="summary" defaultValue={""} />
-                    <input className="btn submit" type="submit" defaultValue="Create Game" />
+                    <input className="btn submit" type="submit" value="Create Game" />
                 </div>
             </form>
         </section>
