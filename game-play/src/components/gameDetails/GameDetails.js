@@ -1,11 +1,32 @@
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 
-const GameDetails = ({ games }) => {
+const GameDetails = ({ games, addComment }) => {
 
     const { gameId } = useParams();
     const game = games.find(g => g._id == gameId)
 
+    const [comment, setComment] = useState({
+        username: '',
+        comment: ''
+    });
+
+    const submitCommentHandler = (e) => {
+        e.preventDefault();
+
+        const currComment = `${comment.username}: ${comment.comment}`;
+        addComment(gameId, currComment)
+    }
+
+    const onChange = (e) => {
+        setComment(state => ({
+            ...state,
+            [e.target.name]: e.target.value
+        }))
+    }
+
     return (
+
         <section id="game-details">
             <h1>Game Details</h1>
             <div className="info-section">
@@ -43,14 +64,20 @@ const GameDetails = ({ games }) => {
                     </a>
                 </div>
             </div>
-
-            {/* Bonus */}
+            {console.log(game)}
             {/* Add Comment ( Only for logged-in users, which is not creators of the current game ) */}
             <article className="create-comment">
                 <label>Add new comment:</label>
-                <form className="form">
-                    <textarea name="comment" placeholder="Comment......" defaultValue={""} />
-                    <input className="btn submit" type="submit" defaultValue="Add Comment" />
+                <form className="form" onSubmit={submitCommentHandler}>
+
+                    <input type="text" name='username' placeholder='Username'
+                        onChange={onChange} value={comment.username} />
+
+                    <textarea name="comment" placeholder="Comment......"
+                        onChange={onChange} value={comment.comment} />
+
+                    <input className="btn submit" type="submit" value="Add Comment" />
+
                 </form>
             </article>
         </section>

@@ -22,6 +22,21 @@ function App() {
         gamesService.getAll().then(data => setGames(data));
     }, []);
 
+    const addComment = (gameId, comment) => {
+        setGames(state => {
+            const game = games.find(g => g._id == gameId);
+            const comments = game.comments || [];
+
+            comments.push(comment);
+
+            return [
+                ...state.filter(g => g._id !== gameId),
+                { ...game, comments }
+            ];
+        })
+
+    }
+
     return (
         <div id="box">
             <Header />
@@ -33,7 +48,7 @@ function App() {
                     <Route path='/register' element={<Register />} />
                     <Route path='/create' element={<CreateGame />} />
                     <Route path='/catalog' element={<Catalog games={games} />} />
-                    <Route path='/catalog/:gameId' element={<GameDetails games={games} />} />
+                    <Route path='/catalog/:gameId' element={<GameDetails games={games} addComment={addComment} />} />
                 </Routes>
             </main>
 
