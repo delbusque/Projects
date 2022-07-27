@@ -29,7 +29,7 @@ function App() {
       <About />
 
 
-      <Pears />
+
       <Apples />
 
       <Footer />
