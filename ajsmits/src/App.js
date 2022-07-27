@@ -1,12 +1,19 @@
 import './App.css';
 
 import Header from './components/header/Header';
-import Slider from './components/slider/Slider';
-import Footer from './components/footer/Footer';
-import About from './components/about/About';
-import ForBox from './components/about/ForBox';
+import WhiteHeader from './components/header/WhiteHeader';
+
+import TopSlider from './components/slider/TopSlider';
+import IntroBlocks from './components/intro/IntroBlocks.js';
+import About from './components/about/About.js';
+
 import Pears from './components/fruits/Pears';
 import Apples from './components/fruits/Apples';
+
+import Footer from './components/footer/Footer';
+
+
+
 
 
 function App() {
@@ -14,10 +21,14 @@ function App() {
     <div className="App">
 
       <Header />
+      <WhiteHeader />
 
-      <Slider />
+
+      <TopSlider />
+      <IntroBlocks />
       <About />
-      <ForBox />
+
+
       <Pears />
       <Apples />
 
