@@ -5,8 +5,10 @@ const Apples = () => {
             <section className="hoc container clear">
                 {/* ################################################################################################ */}
                 <div className="sectiontitle">
-                    <p className="nospace font-xs">Apple trees are the most widely grown species in the genus Malus</p>
-                    <h6 className="heading">A. en J. Smits apples</h6>
+
+                    <p className="nospace font-xs">Apples have religious and mythological significance in many cultures</p>
+                    <h6 className="heading">A. en J. Smits Apples</h6>
+
                 </div>
                 <ul id="latest" className="nospace group sd-third">
                     <li className="one_third first">
