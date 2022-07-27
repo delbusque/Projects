@@ -14,20 +14,18 @@ const TopSlider = () => {
                     <article>
                         <h3 className="heading">A. en J. SMITS</h3>
                         <p>
-                            Et malesuada fames ac turpis egestas duis rutrum eros ut sapien in hac
-                            habitasse platea dictumst aliquam venenatis leo et orci ut pretium
-                            odio eu nisi nulla at.
+                            We grow fresh and healthy fruit on 10-hectare farm in Zeeland, The Netherlands. Carefully and with passion our company supplies a varied mix of apples and pears to fruit traders and exporters. Flavour is our mission. What we deliver is your goal.
                         </p>
                         <footer>
                             <ul className="nospace inline pushright">
                                 <li>
                                     <a className="btn" href="#">
-                                        Egestas
+                                        OUR STORY
                                     </a>
                                 </li>
                                 <li>
                                     <a className="btn inverse" href="#">
-                                        Tristique
+                                        WHAT WE DO
                                     </a>
                                 </li>
                             </ul>
