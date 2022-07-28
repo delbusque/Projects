@@ -147,13 +147,7 @@ const Footer = () => {
                                     <a href="#">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="#">Terms</a>
-                                </li>
-                                <li>
                                     <a href="#">Privacy</a>
-                                </li>
-                                <li>
-                                    <a href="#">Cookies</a>
                                 </li>
                                 <li>
                                     <a href="#">Disclaimer</a>
@@ -170,7 +164,7 @@ const Footer = () => {
                     <div id="copyright" className="hoc clear">
                         {/* ################################################################################################ */}
                         <p className="fl_left">
-                            Copyright © 2018 - All Rights Reserved - <a href="#">Domain Name</a>
+                            Copyright © 2022 - All Rights Reserved - <a href="/">AJ Smits</a>
                         </p>
                         <p className="fl_right">
                             Template by{" "}

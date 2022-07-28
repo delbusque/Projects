@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const IntroBlocks = () => {
     return <div className="wrapper row3">
         <main className="hoc container clear">
@@ -7,21 +9,21 @@ const IntroBlocks = () => {
                 <ul className="nospace group grid-3">
                     <li className="one_third">
                         <figure>
-                            <a className="imgover" href="#">
+                            <Link className="imgover" to="/fruit/apples">
                                 <img src="images/demo/apples.jpg" alt="" />
-                            </a>
+                            </Link>
                             <figcaption>
-                                <a href="#">OUR APPLES</a>
+                                <Link to="/fruit/apples">OUR APPLES</Link>
                             </figcaption>
                         </figure>
                     </li>
                     <li className="one_third">
                         <figure>
-                            <a className="imgover" href="#">
+                            <Link className="imgover" to="/fruit/pears">
                                 <img src="images/demo/pears.jpg" alt="" />
-                            </a>
+                            </Link>
                             <figcaption>
-                                <a href="#">OUR PEARS</a>
+                                <Link to="/fruit/pears">OUR PEARS</Link>
                             </figcaption>
                         </figure>
                     </li>

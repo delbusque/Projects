@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Header = () => {
     return (
         <div className="wrapper row0">
@@ -16,9 +18,9 @@ const Header = () => {
                 <div className="fl_right">
                     <ul className="nospace">
                         <li>
-                            <a href="#">
+                            <Link to="/">
                                 <i className="fas fa-home" />
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a href="#" title="Help Centre">

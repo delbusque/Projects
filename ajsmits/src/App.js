@@ -1,18 +1,14 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/header/Header';
 import WhiteHeader from './components/header/WhiteHeader';
 
-import TopSlider from './components/slider/TopSlider';
-import IntroBlocks from './components/intro/IntroBlocks.js';
-import About from './components/about/About.js';
-
-import Pears from './components/fruits/Pears';
+import Main from './components/main/Main';
 import Apples from './components/fruits/Apples';
+import Pears from './components/fruits/Pears';
 
 import Footer from './components/footer/Footer';
-
-
 
 
 
@@ -23,14 +19,11 @@ function App() {
       <Header />
       <WhiteHeader />
 
-
-      <TopSlider />
-      <IntroBlocks />
-      <About />
-
-
-
-      <Apples />
+      <Routes>
+        <Route path='/' element={<Main />} />
+        <Route path='/fruit/apples' element={<Apples />} />
+        <Route path='/fruit/pears' element={<Pears />} />
+      </Routes>
 
       <Footer />
 

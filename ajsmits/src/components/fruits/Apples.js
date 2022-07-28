@@ -6,7 +6,7 @@ const Apples = () => {
                 {/* ################################################################################################ */}
                 <div className="sectiontitle">
 
-                    <p className="nospace font-xs">Apples have religious and mythological significance in many cultures</p>
+                    {/*<p className="nospace font-xs">Apples have religious and mythological significance in many cultures</p>*/}
                     <h6 className="heading">A. en J. Smits Apples</h6>
 
                 </div>
@@ -15,7 +15,7 @@ const Apples = () => {
                         <article>
                             <figure>
                                 <a className="imgover" href="#">
-                                    <img src="images/demo/boskoop.jpg" alt="" />
+                                    <img src="/images/demo/boskoop.jpg" alt="" />
                                 </a>
                                 <figcaption>
                                     <h6 className="heading">Red Boskoop Apples</h6>
@@ -34,7 +34,7 @@ const Apples = () => {
                         <article>
                             <figure>
                                 <a className="imgover" href="#">
-                                    <img src="images/demo/elstar.jpg" alt="" />
+                                    <img src="/images/demo/elstar.jpg" alt="" />
                                 </a>
                                 <figcaption>
                                     <h6 className="heading">Elstar Apples</h6>
@@ -53,7 +53,7 @@ const Apples = () => {
                         <article>
                             <figure>
                                 <a className="imgover" href="#">
-                                    <img src="images/demo/kanzi.jpg" alt="" />
+                                    <img src="/images/demo/kanzi.jpg" alt="" />
                                 </a>
                                 <figcaption>
                                     <h6 className="heading">Kanzi Apples</h6>
