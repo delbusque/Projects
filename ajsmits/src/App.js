@@ -9,6 +9,8 @@ import Apples from './components/fruits/Apples';
 import Pears from './components/fruits/Pears';
 
 import Footer from './components/footer/Footer';
+import Register from './components/register/Register.js';
+import Login from './components/login/Login.js';
 
 
 
@@ -17,12 +19,15 @@ function App() {
     <div className="App">
 
       <Header />
-      <WhiteHeader />
+
 
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/fruit/apples' element={<Apples />} />
         <Route path='/fruit/pears' element={<Pears />} />
+
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
 
       <Footer />
