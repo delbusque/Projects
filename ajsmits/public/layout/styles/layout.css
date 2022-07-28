@@ -37,6 +37,7 @@ File: Layout CSS
 --------------------------------------------------------------------------------------------------------------- */
 #topbar {
 	padding: 20px 0;
+	padding-bottom: 15px;
 	text-transform: uppercase;
 }
 

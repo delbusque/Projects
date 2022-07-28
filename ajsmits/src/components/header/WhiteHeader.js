@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const WhiteHeader = () => {
     return (
 
@@ -6,6 +8,11 @@ const WhiteHeader = () => {
                 {/* ################################################################################################ */}
                 <ul className="nospace clear">
                     <li className="one_quarter first">
+                        <div className="block clear">
+                            <Link to="/"><img src="images/logo-3.png" alt="#" /></Link>
+                        </div>
+                    </li>
+                    <li className="one_quarter">
                         <div className="block clear">
                             <a href="#">
                                 <i className="fas fa-phone" />
@@ -25,16 +32,7 @@ const WhiteHeader = () => {
                             </span>
                         </div>
                     </li>
-                    <li className="one_quarter">
-                        <div className="block clear">
-                            <a href="#">
-                                <i className="fas fa-clock" />
-                            </a>{" "}
-                            <span>
-                                <strong> Mon. - Sat.:</strong> 08.00am - 18.00pm
-                            </span>
-                        </div>
-                    </li>
+
                     <li className="one_quarter">
                         <div className="block clear">
                             <a href="#">

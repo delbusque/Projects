@@ -1,7 +1,7 @@
 const TopSlider = () => {
     return (
         <>
-            <div className="bgded overlay padtop" style={{ backgroundImage: 'url("images/demo/backgrounds/slider-1.jpg")' }}>
+            <div className="bgded overlay padtop" style={{ backgroundImage: 'url("images/demo/backgrounds/slider-1a.jpg")' }}>
                 {/* ################################################################################################ */}
                 {/* ################################################################################################ */}
                 {/* ################################################################################################ */}

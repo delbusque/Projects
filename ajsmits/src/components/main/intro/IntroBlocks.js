@@ -29,11 +29,11 @@ const IntroBlocks = () => {
                     </li>
                     <li className="one_third">
                         <figure>
-                            <a className="imgover" href="#">
+                            <Link className="imgover" to="/register">
                                 <img src="images/demo/workwithus.jpg" alt="" />
-                            </a>
+                            </Link>
                             <figcaption>
-                                <a href="#">WORK WITH US</a>
+                                <Link to="/register">WORK WITH US</Link>
                             </figcaption>
                         </figure>
                     </li>

@@ -8,11 +8,11 @@ const Header = () => {
                 <div className="fl_left">
                     <ul className="nospace">
                         <li>
-                            <i className="fas fa-mobile-alt rgtspace-5" /> +00 (123) 456 7890
+                            <Link to="/">
+                                <img src="/images/logo-miniAA.png" alt="" />
+                            </Link>
                         </li>
-                        <li>
-                            <i className="far fa-envelope rgtspace-5" /> info@domain.com
-                        </li>
+
                     </ul>
                 </div>
                 <div className="fl_right">
@@ -22,21 +22,19 @@ const Header = () => {
                                 <i className="fas fa-home" />
                             </Link>
                         </li>
+
                         <li>
-                            <a href="#" title="Help Centre">
-                                <i className="far fa-life-ring" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="Login">
-                                <i className="fas fa-sign-in-alt" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="Sign Up">
+                            <Link to="/register" title="Sign Up">
                                 <i className="fas fa-edit" />
-                            </a>
+                            </Link>
                         </li>
+
+                        <li>
+                            <Link to="/login" title="Login">
+                                <i className="fas fa-sign-in-alt" />
+                            </Link>
+                        </li>
+
                         <li id="searchform">
                             <div>
                                 <form action="#" method="post">
