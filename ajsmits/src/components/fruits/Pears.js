@@ -6,7 +6,7 @@ const Pears = () => {
                 <div className="sectiontitle">
 
                     {/*<p className="nospace font-xs">Apples have religious and mythological significance in many cultures</p>*/}
-                    <h6 className="heading">A. en J. Smits Pears</h6>
+                    <h6 className="heading">Fruit Company Pears</h6>
 
                 </div>
                 <ul id="latest" className="nospace group sd-third">

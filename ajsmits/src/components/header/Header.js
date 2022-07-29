@@ -9,7 +9,7 @@ const Header = () => {
                     <ul className="nospace">
                         <li>
                             <Link to="/">
-                                <img src="/images/logo-miniAA.png" alt="" />
+                                {/*<img src="/images/logo-miniAA.png" alt="" />*/}
                             </Link>
                         </li>
 

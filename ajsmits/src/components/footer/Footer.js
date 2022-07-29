@@ -164,14 +164,14 @@ const Footer = () => {
                     <div id="copyright" className="hoc clear">
                         {/* ################################################################################################ */}
                         <p className="fl_left">
-                            Copyright © 2022 - All Rights Reserved - <a href="/">AJ Smits</a>
+                            Copyright © 2022 - All Rights Reserved - <a href="/">Fruit Company</a>
                         </p>
-                        <p className="fl_right">
+                        {/*<p className="fl_right">
                             Template by{" "}
                             <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">
                                 OS Templates
                             </a>
-                        </p>
+    </p>*/}
                         {/* ################################################################################################ */}
                     </div>
                 </div>

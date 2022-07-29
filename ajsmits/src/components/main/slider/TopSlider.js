@@ -12,9 +12,9 @@ const TopSlider = () => {
                 <div id="pageintro" className="hoc clear">
                     {/* ################################################################################################ */}
                     <article>
-                        <h3 className="heading">A. en J. SMITS</h3>
+                        <h3 className="heading">Fruit Company</h3>
                         <p>
-                            We grow fresh and healthy fruit on 10-hectare farm in Zeeland, The Netherlands. Carefully and with passion our company supplies a varied mix of apples and pears to fruit traders and exporters. Flavour is our mission. What we deliver is your goal.
+                            We grow fresh and healthy fruit on 10-hectare farm in EU. Carefully and with passion our company supplies a varied mix of apples and pears to fruit traders and exporters. Flavour is our mission. What we deliver is your goal.
                         </p>
                         <footer>
                             <ul className="nospace inline pushright">
