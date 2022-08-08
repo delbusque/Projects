@@ -1,7 +1,21 @@
+import { useNavigate } from "react-router-dom";
+
+import { login } from "../../services/authService";
+
 const Login = () => {
+    const navigate = useNavigate();
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        const { email, password } = Object.fromEntries(new FormData(e.target));
+        login(email, password).then(data => console.log(data))
+            .catch(() => navigate('/'))
+
+
+    }
+
     return (
         <section id="login-page" className="auth">
-            <form id="login">
+            <form id="login" onSubmit={onSubmit}>
                 <div className="container">
                     <div className="brand-logo" />
                     <h1>Login</h1>
