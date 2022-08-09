@@ -1,16 +1,26 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { login } from "../../services/authService";
 
+import AuthContext from "../../contexts/AuthContext";
+
 const Login = () => {
+
+    const { userLogin, auth } = useContext(AuthContext);
+
     const navigate = useNavigate();
     const onSubmit = async (e) => {
         e.preventDefault();
         const { email, password } = Object.fromEntries(new FormData(e.target));
-        login(email, password).then(data => console.log(data))
-            .catch(() => navigate('/'))
+        login(email, password)
+            .then(authData => {
+                userLogin(authData);
+                navigate('/');
+            })
+            .catch(() => navigate('/'));
 
-
+        console.log(auth.email);
     }
 
     return (
