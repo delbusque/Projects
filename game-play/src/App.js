@@ -11,6 +11,7 @@ import AuthContext from './contexts/AuthContext';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
 import Login from './components/login/Login';
+import Logout from "./components/logout/Logout.js";
 import CreateGame from './components/createGame/CreateGame';
 import Catalog from './components/catalog/Catalog';
 import GameDetails from './components/gameDetails/GameDetails';
@@ -23,7 +24,9 @@ function App() {
 
     const userLogin = (userData) => {
         setAuth(userData);
-    }
+    };
+
+    const userLogout = () => setAuth({});
 
     useEffect(() => {
         gamesService.getAll().then(data => setGames(data));
@@ -56,7 +59,7 @@ function App() {
     }
 
     return (
-        <AuthContext.Provider value={{ user: auth, userLogin }}>
+        <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
             <div id="box">
                 <Header />
 
@@ -64,6 +67,7 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Home games={games} />} />
                         <Route path='/login' element={<Login />} />
+                        <Route path='/logout' element={<Logout />} />
                         <Route path='/register' element={
                             <Suspense fallback={<span>Loading ...</span>}>
                                 <Register />
