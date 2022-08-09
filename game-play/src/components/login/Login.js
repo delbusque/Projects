@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { login } from "../../services/authService";
+import * as authService from "../../services/authService";
 
 import AuthContext from "../../contexts/AuthContext";
 
@@ -13,7 +13,7 @@ const Login = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
         const { email, password } = Object.fromEntries(new FormData(e.target));
-        login(email, password)
+        authService.login(email, password)
             .then(authData => {
                 userLogin(authData);
                 navigate('/');
