@@ -7,7 +7,7 @@ import AuthContext from "../../contexts/AuthContext";
 
 const Login = () => {
 
-    const { userLogin, auth } = useContext(AuthContext);
+    const { userLogin } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const onSubmit = async (e) => {
@@ -19,8 +19,6 @@ const Login = () => {
                 navigate('/');
             })
             .catch(() => navigate('/'));
-
-        console.log(auth.email);
     }
 
     return (
