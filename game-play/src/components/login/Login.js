@@ -34,7 +34,7 @@ const Login = () => {
                     <input type="submit" className="btn submit" defaultValue="Login" />
                     <p className="field">
                         <span>
-                            If you don't have profile click <a href="#">here</a>
+                            If you don't have profile click <a href="/register">here</a>
                         </span>
                     </p>
                 </div>
