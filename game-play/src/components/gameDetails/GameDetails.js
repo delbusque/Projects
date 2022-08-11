@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useContext } from 'react';
 import AuthContext from '../../contexts/AuthContext';
@@ -28,6 +28,8 @@ const GameDetails = ({ games, addComment }) => {
             [e.target.name]: e.target.value
         }))
     }
+
+
 
     return (
 
@@ -64,9 +66,10 @@ const GameDetails = ({ games, addComment }) => {
                         <a href="#" className="button">
                             Edit
                         </a>
-                        <a href="#" className="button">
+
+                        <Link to={`/delete/${gameId}`} className="button">
                             Delete
-                        </a>
+                        </Link>
                     </div>
                     : null}
             </div>

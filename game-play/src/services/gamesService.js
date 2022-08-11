@@ -12,3 +12,10 @@ export const createGame = (gameData, accessToken) => fetch(`${baseUrl}`, {
     },
     body: JSON.stringify(gameData)
 }).then(data => data.json());
+
+export const deleteGame = (gameId, accessToken) => fetch(`${baseUrl}/${gameId}`, {
+    method: 'DELETE',
+    headers: {
+        'X-Authorization': accessToken
+    }
+}).then(data => data.json());

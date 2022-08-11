@@ -16,6 +16,7 @@ import Logout from "./components/logout/Logout.js";
 import CreateGame from './components/createGame/CreateGame';
 import Catalog from './components/catalog/Catalog';
 import GameDetails from './components/gameDetails/GameDetails';
+import DeleteGame from "./components/DeleteGame";
 
 const Register = lazy(() => import('./components/register/Register'));
 
@@ -40,7 +41,14 @@ function App() {
                 ...gameData
             }
         ])
+    }
 
+    const deleteGameHandler = (gameId) => {
+        setGames(state => {
+            return [
+                ...state.filter(g => g._id !== gameId)
+            ]
+        })
     }
 
     const addComment = (gameId, comment) => {
@@ -59,7 +67,7 @@ function App() {
     }
 
     return (
-        <GameContext.Provider value={{ createGameHandler }}>
+        <GameContext.Provider value={{ createGameHandler, deleteGameHandler }}>
             <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
                 <div id="box">
                     <Header />
@@ -77,6 +85,7 @@ function App() {
                             <Route path='/create' element={<CreateGame />} />
                             <Route path='/catalog' element={<Catalog games={games} />} />
                             <Route path='/catalog/:gameId' element={<GameDetails games={games} addComment={addComment} />} />
+                            <Route path='/delete/:gameId' element={<DeleteGame />} />
                         </Routes>
                     </main>
 
