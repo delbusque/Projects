@@ -1,7 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
+import { useContext } from 'react';
+import AuthContext from '../../contexts/AuthContext';
 
 const GameDetails = ({ games, addComment }) => {
+
+    const { user } = useContext(AuthContext);
 
     const { gameId } = useParams();
     const game = games.find(g => g._id == gameId)
@@ -55,31 +59,35 @@ const GameDetails = ({ games, addComment }) => {
 
                 </div>
                 {/* Edit/Delete buttons ( Only for creator of this game ) */}
-                <div className="buttons">
-                    <a href="#" className="button">
-                        Edit
-                    </a>
-                    <a href="#" className="button">
-                        Delete
-                    </a>
-                </div>
+                {user._id === game._ownerId
+                    ? <div className="buttons">
+                        <a href="#" className="button">
+                            Edit
+                        </a>
+                        <a href="#" className="button">
+                            Delete
+                        </a>
+                    </div>
+                    : null}
             </div>
-            {console.log(game)}
+
             {/* Add Comment ( Only for logged-in users, which is not creators of the current game ) */}
-            <article className="create-comment">
-                <label>Add new comment:</label>
-                <form className="form" onSubmit={submitCommentHandler}>
+            {user._id !== game._ownerId
+                ? <article className="create-comment">
+                    <label>Add new comment:</label>
+                    <form className="form" onSubmit={submitCommentHandler}>
 
-                    <input type="text" name='username' placeholder='Username'
-                        onChange={onChange} value={comment.username} />
+                        <input type="text" name='username' placeholder='Username'
+                            onChange={onChange} value={comment.username} />
 
-                    <textarea name="comment" placeholder="Comment......"
-                        onChange={onChange} value={comment.comment} />
+                        <textarea name="comment" placeholder="Comment......"
+                            onChange={onChange} value={comment.comment} />
 
-                    <input className="btn submit" type="submit" value="Add Comment" />
+                        <input className="btn submit" type="submit" value="Add Comment" />
 
-                </form>
-            </article>
+                    </form>
+                </article>
+                : null}
         </section>
     )
 }
