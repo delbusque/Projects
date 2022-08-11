@@ -16,9 +16,15 @@ const Login = () => {
         authService.login(email, password)
             .then(authData => {
                 userLogin(authData);
-                navigate('/');
+                if (authData.accessToken) {
+                    navigate('/');
+                } else {
+                    console.log(authData);
+                    return;
+                }
+
             })
-            .catch(() => navigate('/'));
+            .catch((err) => console.log(err));
     }
 
     return (

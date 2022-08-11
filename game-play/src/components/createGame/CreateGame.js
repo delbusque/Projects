@@ -1,14 +1,22 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import GameContext from "../../contexts/GameContex";
+import AuthContext from "../../contexts/AuthContext";
+import * as gameService from '../../services/gamesService'
 
-const CreateGame = ({ createGameHandler }) => {
-    const navigate = useNavigate()
+const CreateGame = () => {
+    const navigate = useNavigate();
+    const { createGameHandler } = useContext(GameContext);
+    const { user } = useContext(AuthContext);
 
     const onSubmit = (e) => {
         e.preventDefault();
-        const gameData = Object.fromEntries(new FormData(e.target));
+        const formData = Object.fromEntries(new FormData(e.target));
 
-        createGameHandler(gameData);
-        navigate('/catalog');
+        gameService.createGame(formData, user.accessToken).then(gameData => {
+            createGameHandler(gameData);
+            navigate('/catalog');
+        }).catch((err) => console.log(err));
     }
 
     return (

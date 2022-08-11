@@ -23,7 +23,13 @@ const Register = () => {
 
         authService.register(email, password).then(userData => {
             userLogin(userData);
-            navigate('/');
+
+            if (userData.accessToken) {
+                navigate('/');
+            } else {
+                console.log(userData);
+                return;
+            }
         }).catch((err) => console.log(err))
     }
 

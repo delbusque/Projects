@@ -7,6 +7,7 @@ import './App.css';
 import * as gamesService from './services/gamesService';
 
 import AuthContext from './contexts/AuthContext';
+import GameContext from "./contexts/GameContex";
 
 import Header from './components/header/Header';
 import Home from './components/home/Home';
@@ -36,8 +37,7 @@ function App() {
         setGames(state => [
             ...state,
             {
-                ...gameData,
-                _id: uniqid()
+                ...gameData
             }
         ])
 
@@ -59,29 +59,30 @@ function App() {
     }
 
     return (
-        <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
-            <div id="box">
-                <Header />
+        <GameContext.Provider value={{ createGameHandler }}>
+            <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
+                <div id="box">
+                    <Header />
 
-                <main id="main-content">
-                    <Routes>
-                        <Route path='/' element={<Home games={games} />} />
-                        <Route path='/login' element={<Login />} />
-                        <Route path='/logout' element={<Logout />} />
-                        <Route path='/register' element={
-                            <Suspense fallback={<span>Loading ...</span>}>
-                                <Register />
-                            </Suspense>
-                        } />
-                        <Route path='/create' element={<CreateGame createGameHandler={createGameHandler} />} />
-                        <Route path='/catalog' element={<Catalog games={games} />} />
-                        <Route path='/catalog/:gameId' element={<GameDetails games={games} addComment={addComment} />} />
-                    </Routes>
-                </main>
+                    <main id="main-content">
+                        <Routes>
+                            <Route path='/' element={<Home games={games} />} />
+                            <Route path='/login' element={<Login />} />
+                            <Route path='/logout' element={<Logout />} />
+                            <Route path='/register' element={
+                                <Suspense fallback={<span>Loading ...</span>}>
+                                    <Register />
+                                </Suspense>
+                            } />
+                            <Route path='/create' element={<CreateGame />} />
+                            <Route path='/catalog' element={<Catalog games={games} />} />
+                            <Route path='/catalog/:gameId' element={<GameDetails games={games} addComment={addComment} />} />
+                        </Routes>
+                    </main>
 
 
-            </div>
-        </AuthContext.Provider>
+                </div>
+            </AuthContext.Provider></GameContext.Provider>
     );
 }
 
