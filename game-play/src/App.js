@@ -17,6 +17,7 @@ import CreateGame from './components/createGame/CreateGame';
 import Catalog from './components/catalog/Catalog';
 import GameDetails from './components/gameDetails/GameDetails';
 import DeleteGame from "./components/DeleteGame";
+import EditGame from "./components/EditGame";
 
 const Register = lazy(() => import('./components/register/Register'));
 
@@ -51,6 +52,15 @@ function App() {
         })
     }
 
+    const editGameHandler = (gameId, editedGame) => {
+        setGames(state => {
+            return [
+                ...state.filter(g => g._id !== gameId),
+                editedGame
+            ]
+        })
+    }
+
     const addComment = (gameId, comment) => {
         setGames(state => {
             const game = games.find(g => g._id == gameId);
@@ -67,7 +77,7 @@ function App() {
     }
 
     return (
-        <GameContext.Provider value={{ createGameHandler, deleteGameHandler }}>
+        <GameContext.Provider value={{ games, createGameHandler, deleteGameHandler, editGameHandler }}>
             <AuthContext.Provider value={{ user: auth, userLogin, userLogout }}>
                 <div id="box">
                     <Header />
@@ -86,6 +96,7 @@ function App() {
                             <Route path='/catalog' element={<Catalog games={games} />} />
                             <Route path='/catalog/:gameId' element={<GameDetails games={games} addComment={addComment} />} />
                             <Route path='/delete/:gameId' element={<DeleteGame />} />
+                            <Route path='/:gameId/edit' element={<EditGame />} />
                         </Routes>
                     </main>
 

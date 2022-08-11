@@ -19,3 +19,12 @@ export const deleteGame = (gameId, accessToken) => fetch(`${baseUrl}/${gameId}`,
         'X-Authorization': accessToken
     }
 }).then(data => data.json());
+
+export const editGame = (gameId, accessToken, newData) => fetch(`${baseUrl}/${gameId}`, {
+    method: 'PUT',
+    headers: {
+        'content-type': 'application/json',
+        'X-Authorization': accessToken,
+    },
+    body: JSON.stringify(newData)
+}).then(data => data.json());
