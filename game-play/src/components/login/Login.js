@@ -10,6 +10,7 @@ const Login = () => {
     const { userLogin } = useContext(AuthContext);
 
     const navigate = useNavigate();
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const { email, password } = Object.fromEntries(new FormData(e.target));

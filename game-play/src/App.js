@@ -1,6 +1,7 @@
 import { useEffect, useState, lazy, Suspense, useContext } from "react";
 import { Routes, Route } from 'react-router-dom';
-import uniqid from 'uniqid';
+
+import useLocalStorage from "./hooks/useLocalStorage.js";
 
 import './App.css';
 
@@ -23,7 +24,7 @@ const Register = lazy(() => import('./components/register/Register'));
 
 function App() {
     const [games, setGames] = useState([]);
-    const [auth, setAuth] = useState({});
+    const [auth, setAuth] = useLocalStorage('auth', {});
 
     const userLogin = (userData) => {
         setAuth(userData);
