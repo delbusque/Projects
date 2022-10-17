@@ -63,9 +63,9 @@ const GameDetails = ({ games, addComment }) => {
                 {/* Edit/Delete buttons ( Only for creator of this game ) */}
                 {user._id === game._ownerId
                     ? <div className="buttons">
-                        <a href="#" className="button">
+                        <Link to={`/${gameId}/edit`} className="button">
                             Edit
-                        </a>
+                        </Link>
 
                         <Link to={`/delete/${gameId}`} className="button">
                             Delete
