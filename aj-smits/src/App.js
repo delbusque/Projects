@@ -16,7 +16,7 @@ import Login from './components/login/Login.js';
 
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs } from 'firebase/firestore'
-import { firebaseConfig } from './firebase/firebaseInit';
+import { firebaseConfig } from './firebaseConfig.js';
 
 function App() {
 
