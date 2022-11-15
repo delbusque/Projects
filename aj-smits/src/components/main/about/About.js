@@ -1,3 +1,5 @@
+import React from 'react';
+
 const About = () => {
     return (
         <div className="bgded overlay" style={{ backgroundImage: 'url("images/demo/backgrounds/banner-1.jpg")' }}>

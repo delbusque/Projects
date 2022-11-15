@@ -1,9 +1,13 @@
-const Apples = () => {
+import React from 'react';
+
+const Apples = ({ apples }) => {
+    if (apples.length > 0) {
+        console.log(apples[2]);
+    }
     return (
 
         <div className="wrapper row2">
             <section className="hoc container clear">
-                {/* ################################################################################################ */}
                 <div className="sectiontitle">
 
                     {/*<p className="nospace font-xs">Apples have religious and mythological significance in many cultures</p>*/}
@@ -18,12 +22,12 @@ const Apples = () => {
                                     <img src="/images/demo/boskoop.jpg" alt="" />
                                 </a>
                                 <figcaption>
-                                    <h6 className="heading">Red Boskoop Apples</h6>
+                                    <h6 className="heading">{apples.length > 0 && apples[2].variety}</h6>
 
                                 </figcaption>
                             </figure>
                             <p>
-                                Belle de Boskoop apples are distinctive looking because they tend to be lumpy and irregular in shape and fairly large in size.
+                                {apples.length > 0 && apples[2].description}
                             </p>
                             <footer>
                                 <a href="#">Read More</a>

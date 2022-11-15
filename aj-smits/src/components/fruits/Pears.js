@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Pears = () => {
     return (
         <div className="wrapper row2">
