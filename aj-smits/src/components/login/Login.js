@@ -5,8 +5,8 @@ const Login = () => {
         <>
             <div
                 className="bgded overlay padtop"
-                style={{ backgroundImage: 'url("../images/demo/backgrounds/login.jpg")' }}
-            >
+                style={{ backgroundImage: 'url("../images/demo/backgrounds/login.jpg")' }}>
+
                 <div id="breadcrumb" className="hoc clear">
                     <h6 className="heading">LOGIN to proceed with your work application</h6>
                 </div>
@@ -17,10 +17,7 @@ const Login = () => {
                         <div id="comments">
                             <h2>Login details</h2>
 
-
                             <form>
-
-
                                 <div className="one_third first">
                                     <label htmlFor="email">
                                         Email <span>*</span>
@@ -49,7 +46,6 @@ const Login = () => {
                                     />
                                 </div>
 
-
                                 <div className="block clear"></div>
 
                                 <div>
@@ -62,7 +58,6 @@ const Login = () => {
                                     </span>
                                 </p>
                             </form>
-
 
                         </div>
                     </div>
