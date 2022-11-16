@@ -1,9 +1,23 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 
-const Apples = ({ apples }) => {
-    if (apples.length > 0) {
-        console.log(apples[2]);
-    }
+import { getDocs } from 'firebase/firestore'
+import { refApples } from '../../firebaseConfig.js'
+
+import { FruitCard } from './FruitCard.js';
+
+
+const Apples = () => {
+
+    const [apples, setApples] = useState([]);
+
+    useEffect(() => {
+        getDocs(refApples)
+            .then(snapshot => {
+                snapshot.docs.forEach(apple => setApples(oldState => [...oldState, { ...apple.data(), id: apple.id }]))
+            })
+    }, [])
+
     return (
 
         <div className="wrapper row2">
@@ -14,64 +28,13 @@ const Apples = ({ apples }) => {
                     <h6 className="heading">Fruit Company Apples</h6>
 
                 </div>
+
                 <ul id="latest" className="nospace group sd-third">
-                    <li className="one_third first">
-                        <article>
-                            <figure>
-                                <a className="imgover" href="#">
-                                    <img src="/images/demo/boskoop.jpg" alt="" />
-                                </a>
-                                <figcaption>
-                                    <h6 className="heading">{apples.length > 0 && apples[2].variety}</h6>
 
-                                </figcaption>
-                            </figure>
-                            <p>
-                                {apples.length > 0 && apples[2].description}
-                            </p>
-                            <footer>
-                                <a href="#">Read More</a>
-                            </footer>
-                        </article>
-                    </li>
-                    <li className="one_third">
-                        <article>
-                            <figure>
-                                <a className="imgover" href="#">
-                                    <img src="/images/demo/elstar.jpg" alt="" />
-                                </a>
-                                <figcaption>
-                                    <h6 className="heading">Elstar Apples</h6>
+                    {apples.map(apple =>
+                        <FruitCard key={apple.id} fruit={apple} />
+                    )}
 
-                                </figcaption>
-                            </figure>
-                            <p>
-                                Elstar apples are small to moderately sized fruits, averaging 7 to 8 centimeters in diameter, and are round to conic in shape, sometimes exhibiting a slightly lopsided appearance, depending on growing conditions. The skin is bright yellow, covered in large patches of dark red to orange, marbled blush, and has a semi-chewy consistency with a subtly ribbed texture.
-                            </p>
-                            <footer>
-                                <a href="#">Read More</a>
-                            </footer>
-                        </article>
-                    </li>
-                    <li className="one_third">
-                        <article>
-                            <figure>
-                                <a className="imgover" href="#">
-                                    <img src="/images/demo/kanzi.jpg" alt="" />
-                                </a>
-                                <figcaption>
-                                    <h6 className="heading">Kanzi Apples</h6>
-
-                                </figcaption>
-                            </figure>
-                            <p>
-                                Kanzi apples look like a classic example of this fruit—round, medium in size, and deep red or red-yellow/red-orange overlaid on yellow. The flesh is firm, white, and fragrant, and the texture is both crunchy and slightly effervescent.
-                            </p>
-                            <footer>
-                                <a href="#">Read More</a>
-                            </footer>
-                        </article>
-                    </li>
                 </ul>
                 {/* ################################################################################################ */}
             </section>
