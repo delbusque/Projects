@@ -8,7 +8,7 @@ import Main from './components/main/Main';
 import Apples from './components/fruits/Apples';
 import Pears from './components/fruits/Pears';
 
-// import Footer from './components/footer/Footer';
+import Footer from './components/footer/Footer';
 import Register from './components/register/Register.js';
 import Login from './components/login/Login.js';
 
@@ -29,7 +29,7 @@ function App() {
         <Route path='/login' element={<Login />} />
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
 
     </div>
 
