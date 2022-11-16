@@ -12,10 +12,10 @@ const Pears = () => {
 
                 </div>
                 <ul id="latest" className="nospace group sd-third">
-                    <li className="one_third first">
+                    <li className="one_third fruits">
                         <article>
                             <figure>
-                                <a className="imgover" href="#">
+                                <a className="imgover" href="/">
                                     <img src="/images/demo/conference.jpg" alt="" />
                                 </a>
                                 <figcaption>
@@ -27,15 +27,53 @@ const Pears = () => {
                                 Conference pears are medium to large in size and have a narrow, rounded base that tapers to a long and thin neck connecting to a green-brown stem. The mottled, thick skin is green with patches of brown russeting and transforms into a pale yellow when ripe.
                             </p>
                             <footer>
-                                <a href="#">Read More</a>
+                                <a href="/">Read More</a>
                             </footer>
                         </article>
                     </li>
-                    <li className="one_third">
+                    <li className="one_third fruits">
                         <article>
                             <figure>
-                                <a className="imgover" href="#">
-                                    <img src="/images/demo/lucas.jpg" alt="" />
+                                <a className="imgover" href="/">
+                                    <img src="https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2021/11/DJ43NT.jpg" alt="" />
+                                </a>
+                                <figcaption>
+                                    <h6 className="heading">Conference Pears</h6>
+
+                                </figcaption>
+                            </figure>
+                            <p>
+                                Conference pears are medium to large in size and have a narrow, rounded base that tapers to a long and thin neck connecting to a green-brown stem. The mottled, thick skin is green with patches of brown russeting and transforms into a pale yellow when ripe.
+                            </p>
+                            <footer>
+                                <a href="/">Read More</a>
+                            </footer>
+                        </article>
+                    </li>
+                    <li className="one_third fruits">
+                        <article>
+                            <figure>
+                                <a className="imgover" href="/">
+                                    <img src="/images/demo/conference.jpg" alt="" />
+                                </a>
+                                <figcaption>
+                                    <h6 className="heading">Conference Pears</h6>
+
+                                </figcaption>
+                            </figure>
+                            <p>
+                                Conference pears are medium to large in size and have a narrow, rounded base that tapers to a long and thin neck connecting to a green-brown stem. The mottled, thick skin is green with patches of brown russeting and transforms into a pale yellow when ripe.
+                            </p>
+                            <footer>
+                                <a href="/">Read More</a>
+                            </footer>
+                        </article>
+                    </li>
+                    <li className="one_third fruits">
+                        <article>
+                            <figure>
+                                <a className="imgover" href="/">
+                                    <img src="https://www.obstbau.de/Content/files/2940/Pyrus-communis-Alexander-Lucas-1200x630-auto.webp" alt="" />
                                 </a>
                                 <figcaption>
                                     <h6 className="heading">Alexander Lucas Pears</h6>
@@ -46,14 +84,14 @@ const Pears = () => {
                                 Beurre Alexander Lucas pears are large, bulbous fruits with a round to conical, curved shape. The skin is semi-smooth, firm, and thin, ripening from green to yellow, and there is some russeting found on the shoulders around the fibrous stem.
                             </p>
                             <footer>
-                                <a href="#">Read More</a>
+                                <a href="/">Read More</a>
                             </footer>
                         </article>
                     </li>
-                    <li className="one_third">
+                    <li className="one_third fruits">
                         <article>
                             <figure>
-                                <a className="imgover" href="#">
+                                <a className="imgover" href="/">
                                     <img src="/images/demo/forelle.jpg" alt="" />
                                 </a>
                                 <figcaption>
@@ -65,7 +103,45 @@ const Pears = () => {
                                 Forelle pears are small in size, averaging 5-7 centimeters in length, and are symmetrical in shape with a rounded, bell-shaped base tapering to a short neck with a slender light green stem. The smooth, thin skin transforms from green to yellow when ripe and is covered in red blushing, crimson lenticels or pores, and has a slightly waxy sheen.
                             </p>
                             <footer>
-                                <a href="#">Read More</a>
+                                <a href="/">Read More</a>
+                            </footer>
+                        </article>
+                    </li>
+                    <li className="one_third fruits">
+                        <article>
+                            <figure>
+                                <a className="imgover" href="/">
+                                    <img src="/images/demo/forelle.jpg" alt="" />
+                                </a>
+                                <figcaption>
+                                    <h6 className="heading">Forelle Pears</h6>
+
+                                </figcaption>
+                            </figure>
+                            <p>
+                                Forelle pears are small in size, averaging 5-7 centimeters in length, and are symmetrical in shape with a rounded, bell-shaped base tapering to a short neck with a slender light green stem. The smooth, thin skin transforms from green to yellow when ripe and is covered in red blushing, crimson lenticels or pores, and has a slightly waxy sheen.
+                            </p>
+                            <footer>
+                                <a href="/">Read More</a>
+                            </footer>
+                        </article>
+                    </li>
+                    <li className="one_third fruits">
+                        <article>
+                            <figure>
+                                <a className="imgover" href="/">
+                                    <img src="/images/demo/forelle.jpg" alt="" />
+                                </a>
+                                <figcaption>
+                                    <h6 className="heading">Forelle Pears</h6>
+
+                                </figcaption>
+                            </figure>
+                            <p>
+                                Forelle pears are small in size, averaging 5-7 centimeters in length, and are symmetrical in shape with a rounded, bell-shaped base tapering to a short neck with a slender light green stem. The smooth, thin skin transforms from green to yellow when ripe and is covered in red blushing, crimson lenticels or pores, and has a slightly waxy sheen.
+                            </p>
+                            <footer>
+                                <a href="/">Read More</a>
                             </footer>
                         </article>
                     </li>
