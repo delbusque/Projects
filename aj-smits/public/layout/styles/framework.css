@@ -10,247 +10,246 @@ File: Framework CSS
 */
 
 html {
-    overflow-y: scroll;
-    overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    line-height: 1.6em;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.6em;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .right {
-    text-align: right;
+  text-align: right;
 }
 
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .capitalise {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .nospace {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .block {
-    display: block;
+  display: block;
 }
 
 .inline {
-    display: inline-block;
+  display: inline-block;
 }
 
 .justified {
-    text-align: justify;
+  text-align: justify;
 }
 
 .inline * {
-    display: inline-block;
+  display: inline-block;
 }
 
 .inline *:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .pushright li {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .pushright li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .borderedbox {
-    border: 1px solid;
+  border: 1px solid;
 }
 
 .overlay {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .overlay::after {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
-    z-index: -1;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: -1;
 }
 
 .bgded {
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .circle {
-    border-radius: 50%;
-    background-clip: padding-box;
+  border-radius: 50%;
+  background-clip: padding-box;
 }
 
 .btn,
 button.btn {
-    display: inline-block;
-    padding: 8px 25px 10px;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 400;
-    border: 1px solid;
+  display: inline-block;
+  padding: 8px 25px 10px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 1px solid;
 }
 
 button.btn {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 blockquote {
-    display: block;
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 30px;
-    line-height: 1.4;
-    z-index: 1;
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 30px;
+  line-height: 1.4;
+  z-index: 1;
 }
 
 blockquote::before {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 60px;
-    line-height: 60px;
-    content: "\f10d";
-    z-index: -1;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 60px;
+  content: "\f10d";
+  z-index: -1;
 }
 
 .clear,
 .group {
-    display: block;
+  display: block;
 }
 
 .clear::before,
 .clear::after,
 .group::before,
 .group::after {
-    display: table;
-    content: "";
+  display: table;
+  content: "";
 }
 
 .clear,
 .clear::after,
 .group,
 .group::after {
-    clear: both;
+  clear: both;
 }
 
 a {
-    outline: none;
-    text-decoration: none;
+  outline: none;
+  text-decoration: none;
 }
 
 .fl_left,
 .imgl {
-    float: left;
+  float: left;
 }
 
 .fl_right,
 .imgr {
-    float: right;
+  float: right;
 }
 
 img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border: none;
-    line-height: normal;
-    vertical-align: middle;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: normal;
+  vertical-align: middle;
 }
 
 .imgl {
-    margin: 0 15px 10px 0;
-    clear: left;
+  margin: 0 15px 10px 0;
+  clear: left;
 }
 
 .imgr {
-    margin: 0 0 10px 15px;
-    clear: right;
+  margin: 0 0 10px 15px;
+  clear: right;
 }
 
 .imgover {
-    display: inline-block;
-    position: relative;
-    max-width: 100%;
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
 }
 
 .imgover::before,
 .imgover::after {
-    display: block;
-    position: absolute;
-    content: "";
-    text-align: center;
-    opacity: 0;
+  display: block;
+  position: absolute;
+  content: "";
+  text-align: center;
+  opacity: 0;
 }
 
 .imgover::before {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .imgover::after {
-    top: 50%;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    margin: -25px 0 0 -25px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f0c1";
-    /* fa-link */
-    font-size: 28px;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin: -25px 0 0 -25px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f0c1";
+  /* fa-link */
+  font-size: 28px;
 }
 
 .imgover:hover::before,
 .imgover:hover::after {
-    opacity: 1;
+  opacity: 1;
 }
-
 
 /* Fonts
 --------------------------------------------------------------------------------------------------------------- */
@@ -258,7 +257,7 @@ body,
 input,
 textarea,
 select {
-    font-family: Verdana, Geneva, sans-serif;
+  font-family: Verdana, Geneva, sans-serif;
 }
 
 h1,
@@ -268,22 +267,21 @@ h4,
 h5,
 h6,
 .heading {
-    font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-
 
 /* Forms
 --------------------------------------------------------------------------------------------------------------- */
 form,
 fieldset,
 legend {
-    margin: 0;
-    padding: 0;
-    border: none;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 legend {
-    display: none;
+  display: none;
 }
 
 label,
@@ -291,31 +289,30 @@ input,
 textarea,
 select,
 button {
-    display: block;
-    resize: none;
-    outline: none;
-    color: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    vertical-align: middle;
+  display: block;
+  resize: none;
+  outline: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  vertical-align: middle;
 }
 
 label {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 :required,
 :invalid {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 
 ::placeholder {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Makes sure the placeholder text is not transparent */
-
 
 /* Generalise
 --------------------------------------------------------------------------------------------------------------- */
@@ -326,55 +323,55 @@ h4,
 h5,
 h6,
 .heading {
-    margin: 0 0 20px 0;
-    font-size: 1.4rem;
-    line-height: normal;
-    font-weight: normal;
+  margin: 0 0 20px 0;
+  font-size: 1.4rem;
+  line-height: normal;
+  font-weight: normal;
 }
 
 .heading.nospace {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 address {
-    font-style: normal;
-    font-weight: normal;
+  font-style: normal;
+  font-weight: normal;
 }
 
 hr {
-    display: block;
-    width: 100%;
-    height: 1px;
-    border: solid;
-    border-width: 1px 0 0 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  border: solid;
+  border-width: 1px 0 0 0;
 }
 
 .font-xs {
-    font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .font-x1 {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .font-x2 {
-    font-size: 1.8rem;
-    line-height: normal;
+  font-size: 1.8rem;
+  line-height: normal;
 }
 
 .font-x3 {
-    font-size: 2.8rem;
-    line-height: normal;
+  font-size: 2.8rem;
+  line-height: normal;
 }
 
 .wrapper {
-    display: block;
-    position: relative;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    word-wrap: break-word;
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  word-wrap: break-word;
 }
 
 /*
@@ -382,10 +379,9 @@ The "hoc" class is a generic class used to centre a containing element horizonta
 It should be used in conjunction with a second class or ID
 */
 .hoc {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
-
 
 /* HTML 5 Overrides
 --------------------------------------------------------------------------------------------------------------- */
@@ -399,11 +395,10 @@ header,
 main,
 nav,
 section {
-    display: block;
-    margin: 0;
-    padding: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
-
 
 /* Grid - RS-MQF 1140 V.2 - https://www.os-templates.com/free-basic-html5-templates/rs-mqf-1140
 --------------------------------------------------------------------------------------------------------------- */
@@ -413,101 +408,101 @@ section {
 .one_quarter,
 .two_quarter,
 .three_quarter {
-    display: inline-block;
-    float: left;
-    margin: 0 0 0 4.21052%;
-    list-style: none;
+  display: inline-block;
+  float: left;
+  margin: 0 0 90px 2.21052%;
+  list-style: none;
+  height: 500px;
 }
 
 .first {
-    margin-left: 0;
-    clear: left;
+  margin-left: 0;
+  clear: left;
 }
 
 .one_quarter {
-    width: 21.8421%;
+  width: 21.8421%;
 }
 
 .one_third {
-    width: 30.52631%;
+  width: 30.52631%;
 }
 
 .one_half,
 .two_quarter {
-    width: 47.89473%;
+  width: 47.89473%;
 }
 
 .two_third {
-    width: 65.26315%;
+  width: 65.26315%;
 }
 
 .three_quarter {
-    width: 73.94736%;
+  width: 73.94736%;
 }
-
 
 /* Spacing
 --------------------------------------------------------------------------------------------------------------- */
 .btmspace-10 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .btmspace-15 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .btmspace-20 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .btmspace-30 {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .btmspace-50 {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .btmspace-80 {
-    margin-bottom: 80px;
+  margin-bottom: 80px;
 }
 
 .rgtspace-5 {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .rgtspace-10 {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .rgtspace-15 {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .rgtspace-20 {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .rgtspace-30 {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 .inspace-5 {
-    padding: 5px;
+  padding: 5px;
 }
 
 .inspace-10 {
-    padding: 10px;
+  padding: 10px;
 }
 
 .inspace-15 {
-    padding: 15px;
+  padding: 15px;
 }
 
 .inspace-20 {
-    padding: 20px;
+  padding: 20px;
 }
 
 .inspace-30 {
-    padding: 30px;
+  padding: 30px;
 }
