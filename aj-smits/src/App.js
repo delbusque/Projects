@@ -11,6 +11,7 @@ import Pears from './components/fruits/Pears';
 import Footer from './components/footer/Footer';
 import Register from './components/register/Register.js';
 import Login from './components/login/Login.js';
+import Account from './components/account/Account.js';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
 
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/account' element={<Account />} />
       </Routes>
 
       <Footer />
