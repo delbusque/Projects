@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  line-height: 1.6em;
+  /* line-height: 1.6em; */
 }
 
 *,
@@ -410,9 +410,8 @@ section {
 .three_quarter {
   display: inline-block;
   float: left;
-  margin: 0 0 90px 2.21052%;
+  margin: 0 0 70px 2.21052%;
   list-style: none;
-  height: 500px;
 }
 
 .first {
@@ -505,4 +504,8 @@ section {
 
 .inspace-30 {
   padding: 30px;
+}
+
+.fruits {
+  height: 400px;
 }
