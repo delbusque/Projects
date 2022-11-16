@@ -509,3 +509,11 @@ section {
 .fruits {
   height: 400px;
 }
+
+.fl_right {
+  padding-top: 16px;
+}
+
+.account {
+  height: 400px;
+}
