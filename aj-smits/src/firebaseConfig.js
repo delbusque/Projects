@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore'
+import { getFirestore, collection } from 'firebase/firestore'
 
 export const firebaseConfig = {
     apiKey: "AIzaSyCYqVgpbtVNTA_iJ2-OPdm1xqibkLo9zoU",
@@ -11,8 +11,8 @@ export const firebaseConfig = {
     appId: "1:675366364255:web:0d231edf12fbcecc8167ea"
 };
 
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-export const db = getFirestore();
+const db = getFirestore(app);
 
-export const colRefApples = collection(db, 'apples')
+export const refApples = collection(db, 'apples')
