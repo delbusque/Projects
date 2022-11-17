@@ -1,6 +1,8 @@
 import React from 'react';
+import { UserAuth } from '../../contexts/AuthContext.js';
 
 const Account = () => {
+    const { user } = UserAuth();
     return (
         <>
             <div
@@ -18,14 +20,10 @@ const Account = () => {
                             <div className="one_third first">
                                 <h2><strong>Account details</strong></h2>
                             </div>
+
                             <div className="one_third first">
                                 <h3>
-                                    name:
-                                </h3>
-                            </div>
-                            <div className="one_third">
-                                <h3>
-                                    email:
+                                    email: {user.email}
                                 </h3>
                             </div>
                         </div>
