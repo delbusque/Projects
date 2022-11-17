@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 
 import { collection, getDocs } from 'firebase/firestore'
-import { db, auth } from '../../firebaseConfig.js'
+import { db } from '../../firebaseConfig.js'
 
 import { FruitCard } from './FruitCard.js';
 
