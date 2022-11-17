@@ -79,7 +79,7 @@ const Register = () => {
                                     />
                                 </div>
 
-                                <div className="one_third first">
+                                {/* <div className="one_third">
                                     <label htmlFor="repeatPassword">
                                         Repeat Password <span>*</span>
                                     </label>
@@ -91,7 +91,7 @@ const Register = () => {
                                         size={22}
                                         required=""
                                     />
-                                </div>
+                                </div> */}
 
                                 <div className="block clear">
 
