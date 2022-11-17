@@ -1,6 +1,37 @@
 import React from 'react';
+import { UserAuth } from '../../contexts/AuthContext.js';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Register = () => {
+
+    const navigate = useNavigate();
+
+    const { createUser } = UserAuth();
+
+    const [values, setValues] = useState({ email: '', password: '', error: '' });
+
+    const registerHandler = async (e) => {
+        e.preventDefault();
+
+        try {
+            await createUser(values.email, values.password);
+            navigate('/account')
+
+        } catch (e) {
+            console.log(e.message);
+            setValues(oldValues => ({ ...oldValues, error: e.message }))
+        }
+    }
+
+    const inputChangeHandler = (e) => {
+        setValues(oldValues => ({
+            ...oldValues,
+            [e.target.name]: e.target.value
+        }))
+    }
+
     return (
         <>
             <div
@@ -15,48 +46,19 @@ const Register = () => {
                 <main className="hoc container clear">
                     <div className="content">
                         <div id="comments">
-                            <h2>Personal details</h2>
+                            <h2>Register details</h2>
 
-
-                            <form>
-                                <div className="one_third first">
-                                    <label htmlFor="firstName">
-                                        First Name <span>*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="firstName"
-                                        id="firstName"
-                                        defaultValue=""
-                                        size={22}
-                                        required=""
-                                    />
-                                </div>
-
-                                <div className="one_third first">
-                                    <label htmlFor="surname">
-                                        Surname <span>*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="surname"
-                                        id="surname"
-                                        defaultValue=""
-                                        size={22}
-                                        required=""
-                                    />
-                                </div>
-
-
+                            <form onSubmit={registerHandler}>
                                 <div className="one_third first">
                                     <label htmlFor="email">
                                         Email <span>*</span>
                                     </label>
                                     <input
+                                        onChange={inputChangeHandler}
+                                        value={values.email}
                                         type="email"
                                         name="email"
                                         id="email"
-                                        defaultValue=""
                                         size={22}
                                         required=""
                                     />
@@ -67,10 +69,11 @@ const Register = () => {
                                         Password <span>*</span>
                                     </label>
                                     <input
+                                        onChange={inputChangeHandler}
+                                        value={values.password}
                                         type="password"
                                         name="password"
                                         id="password"
-                                        defaultValue=""
                                         size={22}
                                         required=""
                                     />
@@ -89,8 +92,6 @@ const Register = () => {
                                         required=""
                                     />
                                 </div>
-
-
 
                                 <div className="block clear">
 
@@ -116,18 +117,9 @@ const Register = () => {
                     <div className="clear" />
                 </main>
             </div>
-            {/* ################################################################################################ */}
-            {/* ################################################################################################ */}
-            {/* ################################################################################################ */}
-            {/* Bottom Background Image Wrapper */}
-
-            {/* ################################################################################################ */}
-            {/* ################################################################################################ */}
-            {/* ################################################################################################ */}
             <a id="backtotop" href="#top">
                 <i className="fas fa-chevron-up" />
             </a>
-            {/* JAVASCRIPTS */}
         </>
 
     )
