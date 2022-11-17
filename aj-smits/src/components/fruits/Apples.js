@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 
-import { getDocs } from 'firebase/firestore'
-import { refApples } from '../../firebaseConfig.js'
+import { collection, getDocs } from 'firebase/firestore'
+import { db, auth } from '../../firebaseConfig.js'
 
 import { FruitCard } from './FruitCard.js';
 
@@ -10,6 +10,7 @@ import { FruitCard } from './FruitCard.js';
 const Apples = () => {
 
     const [apples, setApples] = useState([]);
+    const refApples = collection(db, 'apples');
 
     useEffect(() => {
         getDocs(refApples)
