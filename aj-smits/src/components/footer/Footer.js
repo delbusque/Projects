@@ -16,31 +16,31 @@ const Footer = () => {
                                     Ligula quis sapien nam molestie massa quis pede maecenas quis
                                     lacus nunc sed lectus quis lectus tristique tincidunt sed varius
                                     nisl tincidunt lectus pellentesque sagittis mauris ut leo
-                                    ullamcorper tortor morbi accumsan [<a href="#">…</a>]
+                                    ullamcorper tortor morbi accumsan [<a href="/">…</a>]
                                 </p>
                                 <ul className="faico clear">
                                     <li>
-                                        <a className="faicon-facebook" href="#">
+                                        <a className="faicon-facebook" href="/">
                                             <i className="fab fa-facebook" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="faicon-google-plus" href="#">
+                                        <a className="faicon-google-plus" href="/">
                                             <i className="fab fa-google-plus-g" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="faicon-linkedin" href="#">
+                                        <a className="faicon-linkedin" href="/">
                                             <i className="fab fa-linkedin" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="faicon-twitter" href="#">
+                                        <a className="faicon-twitter" href="/">
                                             <i className="fab fa-twitter" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="faicon-vk" href="#">
+                                        <a className="faicon-vk" href="/">
                                             <i className="fab fa-vk" />
                                         </a>
                                     </li>
@@ -50,19 +50,19 @@ const Footer = () => {
                                 <h6 className="heading">Nascetur ridiculus mus</h6>
                                 <ul className="nospace linklist">
                                     <li>
-                                        <a href="#">Aliquam eget leo praesent</a>
+                                        <a href="/">Aliquam eget leo praesent</a>
                                     </li>
                                     <li>
-                                        <a href="#">Vel urna nunc ultricies</a>
+                                        <a href="/">Vel urna nunc ultricies</a>
                                     </li>
                                     <li>
-                                        <a href="#">Faucibus nunc cum sociis</a>
+                                        <a href="/">Faucibus nunc cum sociis</a>
                                     </li>
                                     <li>
-                                        <a href="#">Natoque penatibus et magnis</a>
+                                        <a href="/">Natoque penatibus et magnis</a>
                                     </li>
                                     <li>
-                                        <a href="#">Dis parturient montes</a>
+                                        <a href="/">Dis parturient montes</a>
                                     </li>
                                 </ul>
                             </div>
@@ -71,7 +71,7 @@ const Footer = () => {
                                 <p className="nospace btmspace-15">
                                     Ante dapibus luctus sed quis diam vitae ipsum ultrices vehicula.
                                 </p>
-                                <form action="#" method="post">
+                                <form action="/" method="post">
                                     <fieldset>
                                         <legend>Newsletter:</legend>
                                         <input className="btmspace-15" type="text" defaultValue="" placeholder="Name" />
@@ -86,54 +86,54 @@ const Footer = () => {
                                 <h6 className="heading">Aenean diam euismod</h6>
                                 <ul className="nospace clear latestimg">
                                     <li>
-                                        <a className="imgover" href="#">
+                                        <a className="imgover" href="/">
                                             <img src="images/demo/100x100.png" alt="" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="imgover" href="#">
+                                        <a className="imgover" href="/">
                                             <img src="images/demo/100x100.png" alt="" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="imgover" href="#">
+                                        <a className="imgover" href="/">
                                             <img src="images/demo/100x100.png" alt="" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="imgover" href="#">
+                                        <a className="imgover" href="/">
                                             <img src="images/demo/100x100.png" alt="" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="imgover" href="#">
+                                        <a className="imgover" href="/">
                                             <img src="images/demo/100x100.png" alt="" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="imgover" href="#">
+                                        <a className="imgover" href="/">
                                             <img src="images/demo/100x100.png" alt="" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="imgover" href="#">
+                                        <a className="imgover" href="/">
                                             <img src="images/demo/100x100.png" alt="" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="imgover" href="#">
+                                        <a className="imgover" href="/">
                                             <img src="images/demo/100x100.png" alt="" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a className="imgover" href="#">
+                                        <a className="imgover" href="/">
                                             <img src="images/demo/100x100.png" alt="" />
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        {/* ################################################################################################ */}
+                        {/* ///############################################################################################# */}
                         <hr className="btmspace-50" />
                         {/* ################################################################################################ */}
                         <nav>
@@ -144,20 +144,20 @@ const Footer = () => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">About</a>
+                                    <a href="/">About</a>
                                 </li>
                                 <li>
-                                    <a href="#">Contact</a>
+                                    <a href="/">Contact</a>
                                 </li>
                                 <li>
-                                    <a href="#">Privacy</a>
+                                    <a href="/">Privacy</a>
                                 </li>
                                 <li>
-                                    <a href="#">Disclaimer</a>
+                                    <a href="/">Disclaimer</a>
                                 </li>
                             </ul>
                         </nav>
-                        {/* ################################################################################################ */}
+                        {/* /############################################################################################### */}
                     </footer>
                 </div>
                 {/* ################################################################################################ */}
