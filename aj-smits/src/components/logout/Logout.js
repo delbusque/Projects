@@ -1,12 +1,20 @@
-import React from "react"
-import { Navigate } from "react-router-dom";
-import { UserAuth } from "../../contexts/AuthContext.js"
+import { useNavigate } from "react-router-dom";
+import { UserAuthContext } from "../../contexts/AuthContext.js"
 
 const Logout = () => {
-    const { logoutUser } = UserAuth();
-    logoutUser().then(data => console.log(data));
+    const { logoutUser } = UserAuthContext();
+    const navigate = useNavigate();
 
-    return <Navigate to='/' replace />
+    const handleLogout = async () => {
+        try {
+            await logoutUser();
+            navigate('/');
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    handleLogout();
 }
 
 export default Logout;
