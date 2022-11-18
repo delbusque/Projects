@@ -1,6 +1,35 @@
 import React from 'react';
+import { UserAuthContext } from '../../contexts/AuthContext.js';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
+    const { loginUser } = UserAuthContext();
+    const [values, setValues] = useState({ email: '', password: '', error: '' })
+
+    const inputHandler = (e) => {
+        setValues(oldValues => ({
+            ...oldValues,
+            [e.target.name]: e.target.value
+        }))
+    }
+
+    const loginHandler = async (e) => {
+        try {
+            e.preventDefault();
+            await loginUser(values.email, values.password);
+            navigate('/account')
+        } catch (err) {
+            setValues(oldValues => ({
+                ...oldValues,
+                error: err.message
+            }))
+        }
+    }
+
     return (
         <>
             <div
@@ -17,16 +46,17 @@ const Login = () => {
                         <div id="comments">
                             <h2>Login details</h2>
 
-                            <form>
+                            <form onSubmit={loginHandler}>
                                 <div className="one_third first">
                                     <label htmlFor="email">
                                         Email <span>*</span>
                                     </label>
                                     <input
+                                        onChange={inputHandler}
+                                        value={values.email}
                                         type="email"
                                         name="email"
                                         id="email"
-                                        defaultValue=""
                                         size={22}
                                         required=""
                                     />
@@ -37,10 +67,11 @@ const Login = () => {
                                         Password <span>*</span>
                                     </label>
                                     <input
+                                        onChange={inputHandler}
+                                        value={values.password}
                                         type="password"
                                         name="password"
                                         id="password"
-                                        defaultValue=""
                                         size={22}
                                         required=""
                                     />
