@@ -11,28 +11,31 @@ import Pears from './components/fruits/Pears';
 import Footer from './components/footer/Footer';
 import Register from './components/register/Register.js';
 import Login from './components/login/Login.js';
+import Logout from './components/logout/Logout.js'
 import Account from './components/account/Account.js';
-
+import { AuthContextProvider } from './contexts/AuthContext.js'
 
 function App() {
 
   return (
     <div id="top" className="App">
+      <AuthContextProvider>
+        <Header />
 
-      <Header />
+        <Routes>
+          <Route path='/' element={<Main />} />
 
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/fruit/apples' element={<Apples />} />
-        <Route path='/fruit/pears' element={<Pears />} />
+          <Route path='/fruit/apples' element={<Apples />} />
+          <Route path='/fruit/pears' element={<Pears />} />
 
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/account' element={<Account />} />
-      </Routes>
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
+          <Route path='/account' element={<Account />} />
+        </Routes>
 
-      <Footer />
-
+        <Footer />
+      </AuthContextProvider>
     </div>
 
   );
