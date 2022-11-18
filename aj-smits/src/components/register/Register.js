@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserAuth } from '../../contexts/AuthContext.js';
+import { UserAuthContext } from '../../contexts/AuthContext.js';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-    const { createUser } = UserAuth();
+    const { createUser } = UserAuthContext();
 
     const [values, setValues] = useState({ email: '', password: '', error: '' });
 

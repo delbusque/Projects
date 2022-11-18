@@ -1,8 +1,8 @@
 import React from 'react';
-import { UserAuth } from '../../contexts/AuthContext.js';
+import { UserAuthContext } from '../../contexts/AuthContext.js';
 
 const Account = () => {
-    const { user } = UserAuth();
+    const { user } = UserAuthContext();
     return (
         <>
             <div
@@ -10,7 +10,7 @@ const Account = () => {
                 style={{ backgroundImage: 'url("../images/demo/backgrounds/login.jpg")' }}>
 
                 <div id="breadcrumb" className="hoc clear">
-                    <h6 className="heading">WELCOME to our fruit FARM</h6>
+                    <h6 className="heading">WELCOME to our pears and apples FARM</h6>
                 </div>
             </div>
             <div className="wrapper row3 account">

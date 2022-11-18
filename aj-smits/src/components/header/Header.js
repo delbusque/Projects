@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './Header.module.css'
 
 import { Link } from 'react-router-dom';
-import { UserAuth } from '../../contexts/AuthContext.js';
+import { UserAuthContext } from '../../contexts/AuthContext.js';
 
 const Header = () => {
-    const { user } = UserAuth();
+    const { user } = UserAuthContext();
 
     return (
         <div className="wrapper row0">
