@@ -22,7 +22,7 @@ export const Input = () => {
                     id="inputfile" onChange={(e) => onChange(e)} />
                 <br />
 
-                <pre id="output">{fileText}</pre>
+                <div className={styles['text-output']}>{fileText}</div>
 
             </div>
         </>
