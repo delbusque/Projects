@@ -10,21 +10,17 @@ export const Input = () => {
         reader.onload = function (e) {
             setFileText(e.target.result)
         };
-
         reader.readAsText(file);
     }
 
     return (
-        <>
-            <div className={styles['upload-file']}>
+        <div className={styles['upload-file']}>
 
-                <input type="file" name="inputfile"
-                    id="inputfile" onChange={(e) => onChange(e)} />
-                <br />
+            <input type="file" name="inputfile"
+                id="inputfile" onChange={(e) => onChange(e)} />
 
-                <div className={styles['text-output']}>{fileText}</div>
+            <div className={styles['text-output']}>{fileText}</div>
 
-            </div>
-        </>
+        </div>
     )
 }
