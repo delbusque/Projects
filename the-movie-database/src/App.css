@@ -1,3 +1,18 @@
 .App {
   text-align: center;
 }
+
+.input-container {
+  margin: 40px auto;
+  width: 500px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.btn-pre {
+  margin-left: 200px;
+}
