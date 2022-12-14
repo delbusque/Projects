@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import firebase from './firebaseConfig.js';
 import './App.css';
 
 import TitlesContext from './contexts/TitlesContext.js';
@@ -12,6 +12,13 @@ import { FetchedMovies } from './components/FetchedMovies.js';
 import { API_KEY, API_SEARCH } from './fetchUtils.js'
 
 function App() {
+
+  const ref = firebase.firestore().collection('movies');
+
+  const addMovie = (movie) => {
+    ref.doc().set(movie).catch((err) => console.error(err))
+  }
+
 
   const [titles, setTitles] = useState([]);
   const [selectedTitles, setSelectedTitles] = useState([]);
@@ -42,7 +49,6 @@ function App() {
     setSelectedTitles([]);
   }
 
-
   useEffect(() => {
     if (selectedTitles.length > 0) {
       fetchMoviesHandler(selectedTitles);
@@ -59,7 +65,9 @@ function App() {
     })))
   }, [selectedMoviesId, fetchedMovies])
 
-  console.log(savedMovies);
+  useEffect(() => {
+    savedMovies.map(movie => addMovie(movie));
+  }, [savedMovies])
 
   return (
     <TitlesContext.Provider value={{ titles, setTitles, onChangeHandler, fetchedMovies }}>
