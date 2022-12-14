@@ -1,22 +1,28 @@
+import { Routes, Route } from 'react-router-dom';
+
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import firebase from './firebaseConfig.js';
 import './App.css';
 
 import TitlesContext from './contexts/TitlesContext.js';
 import SelectedTitlesContext from './contexts/SelectedTitlesContext.js';
 
-import { Input } from './components/Input.js';
-import { Titles } from './components/Titles.js';
-import { FetchedMovies } from './components/FetchedMovies.js';
+import { Main } from './components/Main.js';
+
+import { Saved } from './components/Saved.js';
 
 import { API_KEY, API_SEARCH } from './fetchUtils.js'
 
 function App() {
 
+  const navigate = useNavigate();
+
   const ref = firebase.firestore().collection('movies');
 
   const addMovie = (movie) => {
-    ref.doc().set(movie).catch((err) => console.error(err))
+    ref.doc().set(movie).catch((err) => console.error(err));
   }
 
 
@@ -24,9 +30,10 @@ function App() {
   const [selectedTitles, setSelectedTitles] = useState([]);
   const [fetchedMovies, setFetchedMovies] = useState([]);
   const [selectedMoviesId, setSelectedMoviesId] = useState([]);
+  const [savedMovies, setSavedMovies] = useState([])
 
   const [previewed, setPreviewed] = useState(false);
-  const [savedMovies, setSavedMovies] = useState([])
+
 
   const onChangeHandler = (e) => {
     const file = e.target.files[0];
@@ -61,27 +68,36 @@ function App() {
     selectedMoviesId.map(id => fetchedMovies.map(origin => origin.map(movie => {
 
       return id == movie.id ? setSavedMovies(oldState => [...oldState, movie]) : null
-
     })))
   }, [selectedMoviesId, fetchedMovies])
 
+
   useEffect(() => {
-    savedMovies.map(movie => addMovie(movie));
+    savedMovies.map(movie => {
+      addMovie(movie)
+      return navigate('/saved')
+    });
+
   }, [savedMovies])
 
   return (
-    <TitlesContext.Provider value={{ titles, setTitles, onChangeHandler, fetchedMovies }}>
-      <SelectedTitlesContext.Provider value={{ selectedTitles, setSelectedTitles, setPreviewed, setSelectedMoviesId }}>
-        <div className="App">
 
-          {titles.length === 0 ? <Input /> : <div className='theatre'>Welcome to THE MOVIE THEATRE</div>}
-          {titles.length > 0 && !previewed && <Titles />}
+    <div className="App">
+      <TitlesContext.Provider value={{ titles, setTitles, onChangeHandler, fetchedMovies }}>
+        <SelectedTitlesContext.Provider value={{ selectedTitles, setSelectedTitles, setPreviewed, setSelectedMoviesId }}>
 
-          {previewed && <FetchedMovies />}
+          <Routes>
+            <Route path='/' element={<Main titles={titles} previewed={previewed} />} />
 
-        </div>
-      </SelectedTitlesContext.Provider>
-    </TitlesContext.Provider>
+            <Route path='/saved' element={<Saved />} />
+          </Routes>
+
+
+        </SelectedTitlesContext.Provider>
+      </TitlesContext.Provider>
+    </div>
+
+
   );
 }
 
