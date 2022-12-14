@@ -18,8 +18,10 @@ export const Titles = () => {
 
     return (
 
-        <form className="input-container" onSubmit={onSubmit}>
-            {titles.map((t, i) => <MovieTitle key={t} title={t} index={i} />)}
+        <form className="list-container" onSubmit={onSubmit}>
+            <div className="titles-container">
+                {titles.map((t, i) => <MovieTitle key={t + i} title={t} index={i} />)}
+            </div>
 
             <Button />
         </form>
