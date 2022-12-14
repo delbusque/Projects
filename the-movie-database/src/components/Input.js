@@ -9,7 +9,7 @@ export const Input = () => {
     return (
         <>
             <div className={styles['upload-file']}>
-                <label htmlFor="inputfile">Works only with a JSON array structures </label>
+                <label htmlFor="inputfile">JSON array only  </label>
                 <input type="file" name="inputfile"
                     id="inputfile" onChange={(e) => onChangeHandler(e)} />
             </div>
