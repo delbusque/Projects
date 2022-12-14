@@ -1,6 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;700&display=swap");
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
 .App {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -9,36 +28,147 @@
   text-align: center;
 }
 
-.input-container {
-  margin: 40px auto;
-  width: 500px;
-}
-
-.fetched-form {
-  flex-direction: column;
-  font-family: "Dosis", sans-serif;
-  font-weight: 700;
-  margin: 40px auto;
-  width: 500px;
-}
-
-.title-container {
+.upload-container {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
+  margin: 30px auto;
+  justify-content: center;
 }
 
-.btn {
-  margin-top: 25px;
-  margin-left: 485px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+.upload-container input {
+  margin-left: 5px;
 }
 
 .theatre {
   font-family: "Dosis", sans-serif;
   font-size: xx-large;
   margin: 30px auto;
+}
+
+.list-container {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.check-title:checked {
+  transform: scale(1);
+}
+
+.fetched-form {
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  position: relative;
+}
+
+.movie-card {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  height: 150px;
+  background-color: #ffca9e22;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.movie-card:hover {
+  box-shadow: 10px 10px 21px -18px rgba(0, 0, 0, 0.75);
+  transform: scale(1);
+}
+
+.card-image {
+  width: 40%;
+  object-fit: cover;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 10px 5px;
+}
+
+.card-title {
+  position: absolute;
+  font-size: large;
+  padding-left: 10px;
+  padding-right: 50px;
+  overflow: hidden;
+}
+.card-overview {
+  position: absolute;
+  top: 60px;
+  padding-left: 20px;
+  padding-right: 50px;
+  font-size: small;
+  overflow: hidden;
+}
+
+.card-date {
+  position: absolute;
+  top: 120px;
+  right: 25px;
+}
+
+.card-checkbox {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  height: 20px;
+  width: 20px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 10px 15px;
+  background-color: #ff97719f;
+  border-radius: 5px;
+  transform-origin: bottom left;
+  transition: all 1300ms ease-in-out;
+  /* --rotate-deg: 2deg; */
+}
+
+.title-container:first-child:hover {
+  transform: scale(1.001) rotate(-2deg);
+}
+.title-container:last-child:hover {
+  transform: scale(1.001) rotate(2deg);
+}
+
+.title {
+  cursor: pointer;
+}
+
+.btn {
+  margin-top: 25px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 25px;
+  font-size: small;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.saved {
+  margin-top: 30px;
+}
+
+.btn-home {
+  margin-top: 25px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
