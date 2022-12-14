@@ -1,8 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;700&display=swap");
+
 .App {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgb(55, 55, 55);
   text-align: center;
 }
 
 .input-container {
+  margin: 40px auto;
+  width: 500px;
+}
+
+.fetched-form {
+  flex-direction: column;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
   margin: 40px auto;
   width: 500px;
 }
@@ -13,6 +28,17 @@
   margin-bottom: 5px;
 }
 
-.btn-pre {
-  margin-left: 200px;
+.btn {
+  margin-top: 25px;
+  margin-left: 485px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.theatre {
+  font-family: "Dosis", sans-serif;
+  font-size: xx-large;
+  margin: 30px auto;
 }
