@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import TitlesContext from '../contexts/TitlesContext.js';
-import styles from './Input.module.css'
 
 export const Input = () => {
 
@@ -8,7 +7,7 @@ export const Input = () => {
 
     return (
         <>
-            <div className={styles['upload-file']}>
+            <div className='upload-container'>
                 <label htmlFor="inputfile">JSON array only  </label>
                 <input type="file" name="inputfile"
                     id="inputfile" onChange={(e) => onChangeHandler(e)} />
