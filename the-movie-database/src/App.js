@@ -22,7 +22,7 @@ function App() {
   const ref = firebase.firestore().collection('movies');
 
   const addMovie = (movie) => {
-    ref.doc().set(movie).catch((err) => console.error(err));
+    ref.doc(movie.title).set(movie).catch((err) => console.error(err));
   }
 
 
