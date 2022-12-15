@@ -75,10 +75,11 @@ dd {
   border-radius: 5px;
   overflow: hidden;
   position: relative;
+  transform: scale(0.99);
 }
 
 .movie-card:hover {
-  box-shadow: 10px 10px 21px -18px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 21px -20px rgba(0, 0, 0, 0.75);
   transform: scale(1);
 }
 
