@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './App.css';
@@ -13,8 +13,6 @@ import { Titles } from './components/Titles.js';
 import { FetchedMovies } from './components/FetchedMovies.js';
 
 import { Saved } from './components/Saved.js';
-
-
 
 function App() {
 
