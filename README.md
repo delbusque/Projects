@@ -1,2 +1,3 @@
-# Projects 
-during my JavaScript learnings with technologies like Node.js and Express.js. Graduating in building interactive user interfaces with React backed by Firebase ...
+#### Projects
+
+Educational projects
