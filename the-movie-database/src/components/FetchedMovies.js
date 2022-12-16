@@ -57,8 +57,8 @@ export const FetchedMovies = () => {
 
     const onSearch = (e) => {
         e.preventDefault();
-
-        if (query == '') {
+        console.log(query);
+        if (query == '' || query == ' ' || query == '  ' || query == '   ' || query == '    ' || query == '     ') {
             return;
         }
 
