@@ -53,6 +53,11 @@ export const FetchedMovies = () => {
 
     const onSearch = (e) => {
         e.preventDefault();
+
+        if (query == '') {
+            return;
+        }
+
         fetch(`${API_SEARCH}/movie?api_key=${API_KEY}&language=en-US&include_adult=false&query=${query}`)
             .then(res => res.json())
             .then(data => {
@@ -75,14 +80,16 @@ export const FetchedMovies = () => {
             </form>
 
             <form className="fetched-form" onSubmit={onSave}>
-                {fetchedMovies.map(origin => origin.map(movie => <MovieCard key={movie.id} movie={movie} />))}
-                {/* {searchedMovies
-                    ? searchedMovies.map(origin => origin.map(movie => <MovieCard key={movie.id} movie={movie} />))
+
+
+                {fetchedMovies[0]?.length == 0
+                    ? <div>No titles found.</div>
                     : fetchedMovies.map(origin => origin.map(movie => <MovieCard key={movie.id} movie={movie} />))
-                } */}
+                }
 
-                <SaveButton />
-
+                {
+                    fetchedMovies[0]?.length !== 0 && <SaveButton />
+                }
 
             </form>
         </>
