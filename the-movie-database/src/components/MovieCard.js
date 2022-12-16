@@ -1,7 +1,6 @@
 import { API_IMAGE } from "../fetchUtils.js";
 
 export const MovieCard = ({ movie }) => {
-
     return (
 
         <>
