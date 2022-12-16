@@ -16,17 +16,6 @@ export const Saved = () => {
         ref.doc(movie.title).set(movie).catch((err) => console.error(err));
     }
 
-    // const saveMoviesHandler = (titles) => {
-    //     titles.map(title => {
-    //         return fetch(`${API_SEARCH}/movie?api_key=${API_KEY}&language=en-US&include_adult=false&query=${title}`)
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 // addMovie(data);
-    //                 console.log(data.results);
-    //             })
-    //     })
-    // }
-
     useEffect(() => {
 
         saveMovies.map(movie => fetchedMovies.map(fetched => fetched.map(exact => {
