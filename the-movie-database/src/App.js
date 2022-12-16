@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import './App.css';
 
@@ -15,8 +14,6 @@ import { FetchedMovies } from './components/FetchedMovies.js';
 import { Saved } from './components/Saved.js';
 
 function App() {
-
-  const navigate = useNavigate();
 
   const [titles, setTitles] = useState([]);
   const [previewTitles, setPreviewTitles] = useState([]);
@@ -42,7 +39,6 @@ function App() {
         </MoviesContext.Provider>
       </TitlesContext.Provider>
     </div>
-
 
   );
 }
