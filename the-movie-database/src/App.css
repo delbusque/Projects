@@ -183,5 +183,15 @@ dd {
 }
 
 .search-input {
-  margin-right: 1px;
+  margin-right: 2px;
+}
+
+.btn-search {
+  height: 30px;
+  cursor: pointer;
+}
+
+.search-input {
+  height: 30px;
+  width: 250px;
 }
