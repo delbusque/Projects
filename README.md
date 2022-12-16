@@ -1,3 +1,1 @@
-#### Projects
-
-Educational projects
+#### Educational JS Projects
