@@ -15,7 +15,7 @@ export const FetchedMovies = () => {
 
     const navigate = useNavigate();
     const { previewTitles } = useContext(TitlesContext);
-    const { fetchedMovies, setFetchedMovies, setSaveMovies } = useContext(MoviesContext);
+    const { fetchedMovies, setFetchedMovies, setSaveMovies, searchedMovies, setSearchedMovies } = useContext(MoviesContext);
 
     const [query, setQuery] = useState('');
 
@@ -39,6 +39,10 @@ export const FetchedMovies = () => {
         }
     }, [])
 
+    useEffect(() => {
+        setFetchedMovies(() => searchedMovies)
+    }, [searchedMovies])
+
 
     const onSave = (e) => {
         e.preventDefault();
@@ -47,19 +51,35 @@ export const FetchedMovies = () => {
         navigate('/saved');
     }
 
+    const onSearch = (e) => {
+        e.preventDefault();
+        fetch(`${API_SEARCH}/movie?api_key=${API_KEY}&language=en-US&include_adult=false&query=${query}`)
+            .then(res => res.json())
+            .then(data => {
+
+                setSearchedMovies(oldState => [...oldState, data.results]);
+            });
+
+        e.currentTarget.reset();
+        setSearchedMovies(() => [])
+    }
+
 
     return (
         <>
             <div className='theatre'>TMDB MOVIES LIST</div>
-            <form className="search-bar" >
+            <form className="search-bar" onSubmit={onSearch}>
                 <input type="text" name="query" className="search-input" onChange={(e) => setQuery(e.target.value)} />
 
                 <button>Search</button>
             </form>
 
             <form className="fetched-form" onSubmit={onSave}>
-
                 {fetchedMovies.map(origin => origin.map(movie => <MovieCard key={movie.id} movie={movie} />))}
+                {/* {searchedMovies
+                    ? searchedMovies.map(origin => origin.map(movie => <MovieCard key={movie.id} movie={movie} />))
+                    : fetchedMovies.map(origin => origin.map(movie => <MovieCard key={movie.id} movie={movie} />))
+                } */}
 
                 <SaveButton />
 

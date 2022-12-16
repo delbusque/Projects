@@ -26,11 +26,13 @@ function App() {
   const [fetchedMovies, setFetchedMovies] = useState([]);
   const [saveMovies, setSaveMovies] = useState([]);
 
+  const [searchedMovies, setSearchedMovies] = useState([]);
+
   return (
 
     <div className="App">
       <TitlesContext.Provider value={{ titles, setTitles, previewTitles, setPreviewTitles }}>
-        <MoviesContext.Provider value={{ fetchedMovies, setFetchedMovies, saveMovies, setSaveMovies }}>
+        <MoviesContext.Provider value={{ fetchedMovies, setFetchedMovies, saveMovies, setSaveMovies, searchedMovies, setSearchedMovies }}>
           <Routes>
             <Route path='/' element={<Input />} />
 
