@@ -15,7 +15,6 @@ export const Saved = () => {
     }
 
     useEffect(() => {
-
         saveMovies.map(movie => fetchedMovies.map(fetched => fetched.map(exact => {
             return movie == exact.id ? addMovie(exact) : null
         })))
