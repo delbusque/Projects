@@ -2,8 +2,6 @@ import { Link } from "react-router-dom"
 import { useContext, useEffect } from "react"
 import MoviesContext from "../contexts/MoviesContext.js"
 
-import { API_KEY, API_SEARCH } from './../fetchUtils.js'
-
 import firebase from './../firebaseConfig.js';
 
 export const Saved = () => {
