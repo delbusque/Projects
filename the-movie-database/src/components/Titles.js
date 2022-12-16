@@ -1,29 +1,39 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
+import { useNavigate } from 'react-router-dom';
+
 import TitlesContext from "../contexts/TitlesContext.js"
-import SelectedTitlesContext from "../contexts/SelectedTitlesContext.js"
-import { MovieTitle } from "./MovieTitle.js"
+import MoviesContext from "../contexts/MoviesContext.js"
+
+import { TitleCard } from "./TitleCard.js"
 import { Button } from './Buttons/Button.js';
+
+import { API_KEY, API_SEARCH } from './../fetchUtils.js'
 
 export const Titles = () => {
 
-    const { titles } = useContext(TitlesContext);
-    const { setSelectedTitles } = useContext(SelectedTitlesContext);
+    const navigate = useNavigate();
+
+    const { titles, setPreviewTitles } = useContext(TitlesContext);
 
 
     const onSubmit = (e) => {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
-        setSelectedTitles(formData.getAll('title'));
+        setPreviewTitles(formData.getAll('title'));
+        navigate('/movies');
     }
 
     return (
+        <>
+            <div className='theatre'>MOVIE LIST</div>
+            <form className="list-container" onSubmit={onSubmit}>
+                <div className="titles-container">
+                    {titles.map((t, i) => <TitleCard key={t + i} title={t} index={i} />)}
+                </div>
 
-        <form className="list-container" onSubmit={onSubmit}>
-            <div className="titles-container">
-                {titles.map((t, i) => <MovieTitle key={t + i} title={t} index={i} />)}
-            </div>
+                <Button />
+            </form>
+        </>
 
-            <Button />
-        </form>
     )
 }

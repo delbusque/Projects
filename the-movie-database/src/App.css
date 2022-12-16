@@ -29,13 +29,12 @@ dd {
 }
 
 .upload-container {
-  display: flex;
   margin: 30px auto;
-  justify-content: center;
+  margin-left: 71px;
 }
 
 .upload-container input {
-  margin-left: 5px;
+  margin-left: 3px;
 }
 
 .theatre {
@@ -68,7 +67,6 @@ dd {
   font-family: "Dosis", sans-serif;
   font-weight: 500;
   display: flex;
-  gap: 10px;
   margin-bottom: 20px;
   height: 150px;
   background-color: #ffca9e22;
@@ -81,6 +79,11 @@ dd {
 .movie-card:hover {
   box-shadow: 10px 10px 21px -20px rgba(0, 0, 0, 0.75);
   transform: scale(1);
+}
+
+.card-label,
+.card-checkbox {
+  cursor: pointer;
 }
 
 .card-image {
@@ -134,6 +137,7 @@ dd {
   border-radius: 5px;
   transform-origin: bottom left;
   transition: all 1300ms ease-in-out;
+  cursor: pointer;
   /* --rotate-deg: 2deg; */
 }
 
@@ -172,4 +176,12 @@ dd {
   border-radius: 5px;
   border: none;
   cursor: pointer;
+}
+
+.search-bar {
+  margin-bottom: 30px;
+}
+
+.search-input {
+  margin-right: 1px;
 }
