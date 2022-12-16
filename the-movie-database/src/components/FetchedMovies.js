@@ -25,6 +25,7 @@ export const FetchedMovies = () => {
                 .then(data => {
                     setFetchedMovies(oldState => [...oldState, data.results]);
                 })
+                .catch((err) => console.error(err));
         })
     }
 
@@ -60,9 +61,9 @@ export const FetchedMovies = () => {
         fetch(`${API_SEARCH}/movie?api_key=${API_KEY}&language=en-US&include_adult=false&query=${query}`)
             .then(res => res.json())
             .then(data => {
-
                 setSearchedMovies(oldState => [...oldState, data.results]);
-            });
+            })
+            .catch((err) => console.error(err));
 
         e.currentTarget.reset();
         setSearchedMovies(() => [])
