@@ -1,19 +1,20 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
 import { useNavigate } from 'react-router-dom';
 
 import TitlesContext from "../contexts/TitlesContext.js"
-import MoviesContext from "../contexts/MoviesContext.js"
+import MoviesContext from "../contexts/MoviesContext.js";
+
 
 import { TitleCard } from "./TitleCard.js"
 import { Button } from './Buttons/Button.js';
-
-import { API_KEY, API_SEARCH } from './../fetchUtils.js'
 
 export const Titles = () => {
 
     const navigate = useNavigate();
 
     const { titles, setPreviewTitles } = useContext(TitlesContext);
+    const { setSearchedMovies } = useContext(MoviesContext);
+
 
 
     const onSubmit = (e) => {
@@ -22,6 +23,10 @@ export const Titles = () => {
         setPreviewTitles(formData.getAll('title'));
         navigate('/movies');
     }
+
+    useEffect(() => {
+        setSearchedMovies(() => [])
+    }, [])
 
     return (
         <>
