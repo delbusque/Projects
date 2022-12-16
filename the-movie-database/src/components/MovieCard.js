@@ -1,10 +1,4 @@
-import { useContext, useEffect, useState } from "react"
-
-import MovieContext from "../contexts/TitlesContext.js";
-
 import { API_IMAGE } from "../fetchUtils.js";
-
-
 
 export const MovieCard = ({ movie }) => {
 
