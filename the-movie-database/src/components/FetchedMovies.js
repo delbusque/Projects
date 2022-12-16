@@ -9,7 +9,6 @@ import MoviesContext from "../contexts/MoviesContext.js";
 import { SaveButton } from './Buttons/SaveButton.js';
 
 import { MovieCard } from "./MovieCard.js";
-import { BackButton } from "./Buttons/BackButton.js";
 
 export const FetchedMovies = () => {
 
@@ -74,9 +73,9 @@ export const FetchedMovies = () => {
         <>
             <div className='theatre'>TMDB MOVIES LIST</div>
             <form className="search-bar" onSubmit={onSearch}>
-                <input type="text" name="query" className="search-input" onChange={(e) => setQuery(e.target.value)} />
+                <input type="text" name="query" placeholder="Jurassic World" className="search-input" onChange={(e) => setQuery(e.target.value)} />
 
-                <button>Search</button>
+                <button className="btn-search">Search</button>
             </form>
 
             <form className="fetched-form" onSubmit={onSave}>
