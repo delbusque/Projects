@@ -48,7 +48,11 @@ export const FetchedMovies = () => {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
         setSaveMovies(formData.getAll('movie'));
-        navigate('/saved');
+
+        if (formData.getAll('movie').length > 0) {
+            navigate('/saved');
+        }
+
     }
 
     const onSearch = (e) => {

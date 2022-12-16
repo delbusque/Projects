@@ -20,8 +20,13 @@ export const Titles = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
+        console.log(formData.getAll('title'));
         setPreviewTitles(formData.getAll('title'));
-        navigate('/movies');
+
+        if (formData.getAll('title').length > 0) {
+            navigate('/movies');
+        }
+
     }
 
     useEffect(() => {
