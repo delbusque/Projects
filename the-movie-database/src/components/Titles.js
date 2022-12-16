@@ -20,7 +20,6 @@ export const Titles = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
-        console.log(formData.getAll('title'));
         setPreviewTitles(formData.getAll('title'));
 
         if (formData.getAll('title').length > 0) {
