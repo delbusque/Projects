@@ -15,8 +15,6 @@ export const Titles = () => {
     const { titles, setPreviewTitles } = useContext(TitlesContext);
     const { setSearchedMovies } = useContext(MoviesContext);
 
-
-
     const onSubmit = (e) => {
         e.preventDefault();
         let formData = new FormData(e.currentTarget);
