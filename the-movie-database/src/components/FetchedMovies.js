@@ -39,6 +39,8 @@ export const FetchedMovies = () => {
         }
     }, [])
 
+
+
     useEffect(() => {
         setFetchedMovies(() => searchedMovies)
     }, [searchedMovies])
