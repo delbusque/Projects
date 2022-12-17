@@ -57,8 +57,8 @@ export const FetchedMovies = () => {
 
     const onSearch = (e) => {
         e.preventDefault();
-        console.log(query);
-        if (query == '' || query == ' ' || query == '  ' || query == '   ' || query == '    ' || query == '     ') {
+
+        if (query == '' || query == ' ' || query == '  ' || query == '   ' || query == '    ' || query == '     ' || query == '      ' || query == '       ' || query == '        ' || query == '         ') {
             return;
         }
 
@@ -72,7 +72,6 @@ export const FetchedMovies = () => {
         e.currentTarget.reset();
         setSearchedMovies(() => [])
     }
-
 
     return (
         <>
@@ -88,7 +87,7 @@ export const FetchedMovies = () => {
 
                 {fetchedMovies[0]?.length == 0
                     ? <div>No titles found.</div>
-                    : fetchedMovies.map(origin => origin.map(movie => <MovieCard key={movie.id} movie={movie} />))
+                    : fetchedMovies.map(origin => origin.filter(m => m.backdrop_path).map(movie => <MovieCard key={movie.id} movie={movie} />))
                 }
 
                 {
