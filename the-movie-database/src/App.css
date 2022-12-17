@@ -105,6 +105,7 @@ dd {
   padding-right: 50px;
   overflow: hidden;
 }
+
 .card-overview {
   position: absolute;
   top: 60px;
@@ -144,6 +145,7 @@ dd {
 .title-container:first-child:hover {
   transform: scale(1.001) rotate(-2deg);
 }
+
 .title-container:last-child:hover {
   transform: scale(1.001) rotate(2deg);
 }
