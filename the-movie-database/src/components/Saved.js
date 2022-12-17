@@ -18,7 +18,7 @@ export const Saved = () => {
         saveMovies.map(movie => fetchedMovies.map(fetched => fetched.map(exact => {
             return movie == exact.id ? addMovie(exact) : null
         })))
-    }, [])
+    }, [addMovie, fetchedMovies, saveMovies])
 
     return (
         <div className="saved">
