@@ -78,7 +78,7 @@ export const FetchedMovies = () => {
         <>
             <div className='theatre'>TMDB MOVIES LIST</div>
             <form className="search-bar" onSubmit={onSearch}>
-                <input type="text" name="query" placeholder="Indiana Jones and the Temple of Doom" className="search-input" onChange={(e) => setQuery(e.target.value)} />
+                <input type="text" name="query" placeholder="Indiana Jones" className="search-input" onChange={(e) => setQuery(e.target.value)} />
 
                 <button className="btn-search">Search</button>
             </form>
