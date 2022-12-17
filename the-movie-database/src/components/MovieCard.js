@@ -6,7 +6,7 @@ export const MovieCard = ({ movie }) => {
         <>
             <label htmlFor={`movie-${movie.id}`} className="card-label">
                 <div className="movie-card">
-                    <img className="card-image" src={API_IMAGE + movie.backdrop_path} alt="" />
+                    <img className="card-image" src={API_IMAGE + movie.backdrop_path} alt={movie.original_title + ' image'} />
                     <div className="card-info" >
                         {movie.original_title ? <h2 className="card-title">{movie.original_title}</h2>
                             : <h2 className="card-title">{movie.original_name}</h2>}
