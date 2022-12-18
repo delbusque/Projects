@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import TitlesContext from "../contexts/TitlesContext.js"
 import MoviesContext from "../contexts/MoviesContext.js";
 
-
 import { TitleCard } from "./TitleCard.js"
 import { Button } from './Buttons/Button.js';
 
@@ -12,8 +11,8 @@ export const Titles = () => {
 
     const navigate = useNavigate();
 
-    const { titles, setPreviewTitles } = useContext(TitlesContext);
-    const { setSearchedMovies } = useContext(MoviesContext);
+    const { titles, setTitles, setPreviewTitles } = useContext(TitlesContext);
+    const { setFetchedMovies, setSearchedMovies } = useContext(MoviesContext);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -23,12 +22,21 @@ export const Titles = () => {
         if (formData.getAll('title').length > 0) {
             navigate('/movies');
         }
-
     }
 
     useEffect(() => {
-        setSearchedMovies(() => [])
+        setFetchedMovies(() => [])
     }, [])
+
+    useEffect(() => {
+        setSearchedMovies(() => [])
+    }, [setSearchedMovies])
+
+    useEffect(() => {
+        const titlesData = window.localStorage.getItem('titles');
+        setTitles(JSON.parse(titlesData));
+    }, [setTitles])
+
 
     return (
         <>

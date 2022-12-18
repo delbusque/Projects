@@ -13,7 +13,7 @@ import { MovieCard } from "./MovieCard.js";
 export const FetchedMovies = () => {
 
     const navigate = useNavigate();
-    const { previewTitles } = useContext(TitlesContext);
+    const { setTitles, previewTitles, setPreviewTitles } = useContext(TitlesContext);
     const { fetchedMovies, setFetchedMovies, setSaveMovies, searchedMovies, setSearchedMovies } = useContext(MoviesContext);
 
     const [query, setQuery] = useState('');
@@ -29,15 +29,12 @@ export const FetchedMovies = () => {
         })
     }
 
+
     useEffect(() => {
         fetchMoviesHandler(previewTitles);
     }, [previewTitles])
 
-    useEffect(() => {
-        return () => {
-            setFetchedMovies([]);
-        }
-    }, [])
+
 
     useEffect(() => {
         setFetchedMovies(() => searchedMovies)
@@ -72,6 +69,22 @@ export const FetchedMovies = () => {
         e.currentTarget.reset();
         setSearchedMovies(() => [])
     }
+
+    useEffect(() => {
+        const titlesData = window.localStorage.getItem('titles');
+        setTitles(JSON.parse(titlesData));
+    }, [setTitles])
+
+    useEffect(() => {
+        const fetchedData = window.localStorage.getItem('fetched');
+        setFetchedMovies(JSON.parse(fetchedData));
+    }, [setFetchedMovies])
+
+    useEffect(() => {
+        return () => {
+            setPreviewTitles([]);
+        }
+    }, [])
 
     return (
         <>

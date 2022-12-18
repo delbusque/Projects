@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom"
 import { useContext, useEffect } from "react"
 import MoviesContext from "../contexts/MoviesContext.js"
+import TitlesContext from "../contexts/TitlesContext.js";
+
 
 import firebase from './../firebaseConfig.js';
 
 export const Saved = () => {
 
-    const { saveMovies, fetchedMovies } = useContext(MoviesContext);
+    const { setTitles, } = useContext(TitlesContext);
+    const { fetchedMovies, saveMovies } = useContext(MoviesContext);
 
     const ref = firebase.firestore().collection('movies');
 
@@ -19,6 +22,11 @@ export const Saved = () => {
             return movie == exact.id ? addMovie(exact) : null
         })))
     }, [addMovie, fetchedMovies, saveMovies])
+
+    useEffect(() => {
+        const titlesData = window.localStorage.getItem('titles');
+        setTitles(JSON.parse(titlesData));
+    }, [setTitles])
 
     return (
         <div className="saved">

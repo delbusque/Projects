@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './App.css';
 
@@ -22,6 +22,16 @@ function App() {
   const [saveMovies, setSaveMovies] = useState([]);
 
   const [searchedMovies, setSearchedMovies] = useState([]);
+
+
+
+  useEffect(() => {
+    window.localStorage.setItem('titles', JSON.stringify(titles))
+  }, [titles])
+
+  useEffect(() => {
+    window.localStorage.setItem('fetched', JSON.stringify(fetchedMovies))
+  }, [fetchedMovies])
 
   return (
 
