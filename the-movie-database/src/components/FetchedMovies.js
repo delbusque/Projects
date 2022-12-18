@@ -88,7 +88,9 @@ export const FetchedMovies = () => {
 
     return (
         <>
-            <div className='theatre'>TMDB MOVIES LIST</div>
+            <div className='theatre'>{fetchedMovies.length !== 0
+                ? 'TMDB MOVIE LIST'
+                : 'TMDB SEARCH'}</div>
             <form className="search-bar" onSubmit={onSearch}>
                 <input type="text" name="query" className="search-input" onChange={(e) => setQuery(e.target.value)} />
 
@@ -104,12 +106,10 @@ export const FetchedMovies = () => {
                 }
 
                 {
-                    fetchedMovies[0]?.length !== 0 && <SaveButton />
+                    fetchedMovies.length !== 0 && <SaveButton />
                 }
 
             </form>
         </>
-
-
     )
 }
