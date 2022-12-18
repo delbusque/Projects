@@ -26,6 +26,8 @@ dd {
   font-weight: 300;
   color: rgb(55, 55, 55);
   text-align: center;
+  min-width: 300px;
+  max-width: 1920px;
 }
 
 .upload-container {
@@ -59,7 +61,8 @@ dd {
   font-weight: 700;
   margin-left: auto;
   margin-right: auto;
-  width: 700px;
+  min-width: 300px;
+  max-width: 700px;
   position: relative;
 }
 
@@ -79,6 +82,18 @@ dd {
 .movie-card:hover {
   box-shadow: 10px 10px 21px -20px rgba(0, 0, 0, 0.75);
   transform: scale(1);
+}
+
+@media (max-width: 600px) {
+  .movie-card {
+    height: 200px;
+  }
+}
+
+@media (max-width: 440px) {
+  .movie-card {
+    height: 230px;
+  }
 }
 
 .card-label,
@@ -115,10 +130,36 @@ dd {
   overflow: hidden;
 }
 
+@media (max-width: 440px) {
+  .card-overview {
+    font-size: x-small;
+    top: 90px;
+  }
+}
+
+@media (max-width: 330px) {
+  .card-overview {
+    display: none;
+  }
+}
+
 .card-date {
   position: absolute;
   top: 120px;
   right: 25px;
+}
+
+@media (max-width: 600px) {
+  .card-date {
+    top: 165px;
+    right: 25px;
+  }
+}
+
+@media (max-width: 440px) {
+  .card-date {
+    top: 195px;
+  }
 }
 
 .card-checkbox {
@@ -181,11 +222,7 @@ dd {
 }
 
 .search-bar {
-  margin-bottom: 30px;
-}
-
-.search-input {
-  margin-right: 2px;
+  margin: 30px auto;
 }
 
 .btn-search {
@@ -194,6 +231,13 @@ dd {
 }
 
 .search-input {
+  margin-right: 2px;
   height: 30px;
   width: 250px;
+}
+
+@media (max-width: 315px) {
+  .search-input {
+    width: 200px;
+  }
 }
