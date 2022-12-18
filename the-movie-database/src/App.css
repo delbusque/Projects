@@ -71,6 +71,8 @@ dd {
   font-weight: 500;
   display: flex;
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   height: 150px;
   background-color: #ffca9e22;
   border-radius: 5px;
@@ -93,6 +95,7 @@ dd {
 @media (max-width: 440px) {
   .movie-card {
     height: 230px;
+
   }
 }
 
@@ -174,6 +177,8 @@ dd {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 10px 15px;
   background-color: #ff97719f;
   border-radius: 5px;
