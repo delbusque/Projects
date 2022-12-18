@@ -6,5 +6,4 @@
 
 ##### Used techniques - JavaScript, React, HTML & CSS
 
-    TODO: Persist data on Refresh with LocalStorage
-          Pagination on fetched results from API
+    TODO: Pagination on fetched results from API
