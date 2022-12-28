@@ -1,4 +1,4 @@
-### Single-page application for fetching data from list of movie titles and the TMDB API
+### Single-page application for fetching data from list of movies titles and the TMDB API
 
     Could launch the app at https://the-movie-database-34a4a.web.app
 
