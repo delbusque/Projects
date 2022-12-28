@@ -1,2 +1,2 @@
 # Cubicle application
-created as an exercise for JS BACK-END COURSE with Express.js ...
+created as an exercise for JS BACK-END COURSE
