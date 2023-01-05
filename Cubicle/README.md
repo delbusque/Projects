@@ -1,2 +1,3 @@
-# Cubicle application
-created as an exercise for JS BACK-END COURSE
+# Cubicle 
+
+ Node.js, Express.js and MongoDB web app for adding and browsing cubicles with user authorisation and authentication.
